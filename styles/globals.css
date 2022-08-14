@@ -1,26 +1,29 @@
+@font-face {
+	font-family: Sansation;
+	src: url("./font/sansation/Sansation_Bold.ttf"), url("./font/sansation/Sansation_Bold_Italic.ttf"),
+		url("./font/sansation/Sansation_Regular.ttf"), url("./font/sansation/Sansation_Light.ttf");
+}
+
+@import "./css/nav";
+@import "./css/index";
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-family: Sansation, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+html {
+	background-color: #000;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	color: #fff;
+	font-family: Sansation;
 }

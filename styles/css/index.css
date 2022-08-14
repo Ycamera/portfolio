@@ -1,0 +1,66 @@
+.btn-learn-more {
+  position: relative;
+}
+.btn-learn-more .btn-border-top-left,
+.btn-learn-more .btn-border-bottom-right {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.btn-learn-more .btn-border-top-left::before, .btn-learn-more .btn-border-top-left::after,
+.btn-learn-more .btn-border-bottom-right::before,
+.btn-learn-more .btn-border-bottom-right::after {
+  content: "";
+  position: absolute;
+}
+.btn-learn-more .btn-text, .btn-learn-more .btn-border-bottom-right::after, .btn-learn-more .btn-border-bottom-right::before, .btn-learn-more .btn-border-top-left::after, .btn-learn-more .btn-border-top-left::before {
+  transition: 0.5s cubic-bezier(0.78, 0.09, 0.18, 1);
+}
+.btn-learn-more .btn-border-top-left::after, .btn-learn-more .btn-border-top-left::before {
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.btn-learn-more .btn-border-bottom-right::after, .btn-learn-more .btn-border-bottom-right::before {
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.btn-learn-more .btn-border-top-left::before {
+  height: 1px;
+  width: 100%;
+  transform: scaleX(0.2);
+  transform-origin: left;
+}
+.btn-learn-more .btn-border-top-left::after {
+  height: 100%;
+  width: 1px;
+  transform: scaleY(0.5);
+  transform-origin: top;
+}
+.btn-learn-more .btn-border-bottom-right::before {
+  height: 1px;
+  width: 100%;
+  transform: scaleX(0.2);
+  transform-origin: right;
+}
+.btn-learn-more .btn-border-bottom-right::after {
+  height: 100%;
+  width: 1px;
+  transform: scaleY(0.5);
+  transform-origin: bottom;
+}
+.btn-learn-more:hover .btn-border-top-left::before,
+.btn-learn-more:hover .btn-border-bottom-right::before {
+  transform: scaleX(1);
+}
+.btn-learn-more:hover .btn-border-top-left::after,
+.btn-learn-more:hover .btn-border-bottom-right::after {
+  transform: scaleY(0);
+}
+.btn-learn-more:hover .btn-text {
+  transform: scale(0.8);
+}
