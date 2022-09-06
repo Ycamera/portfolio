@@ -13,11 +13,11 @@ const BackgroundCanvas = ({ children }) => {
 		let data = imageData.data;
 
 		const rgb = {
-			r: 30,
-			g: 30,
-			b: 30,
+			r: 10,
+			g: 10,
+			b: 10,
 		};
-		const dotAlpha = 256;
+		const dotAlpha = 255;
 
 		function init() {
 			for (let i = 0; i < data.length; i += 40) {
@@ -67,7 +67,7 @@ const BackgroundCanvas = ({ children }) => {
 				h="100vh"
 				pointerEvents={"none"}
 			></Box>
-			<Box>{children}</Box>
+			{children}
 		</Box>
 	);
 };

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Box } from "@chakra-ui/react";
 import { color } from "/styles/fontColor";
 
-const BackgroundCanvasParticle = ({ children }) => {
+const BackgroundCanvasParticle = ({ children, zIndex = -10 }) => {
 	useEffect(() => {
 		const canvas = document.getElementById("canvasBgParticle");
 		let ctx = canvas.getContext("2d");
@@ -111,7 +111,7 @@ const BackgroundCanvasParticle = ({ children }) => {
 		<Box
 			as="canvas"
 			id="canvasBgParticle"
-			zIndex={-10}
+			zIndex={zIndex}
 			pos="fixed"
 			top="0"
 			left="0"

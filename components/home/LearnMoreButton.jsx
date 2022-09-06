@@ -6,7 +6,7 @@ const LearnMoreButton = ({ link, text = "Learn More" }) => {
 	return (
 		<NextLink href={link}>
 			<a>
-				<MotionY y={100} appearDelay={0.1}>
+				<MotionY y={100} appearDelay={0.25}>
 					<Flex justifyContent={"center"} mt="2rem" onMouseEnter={() => {}}>
 						<Box
 							display="inline-block"

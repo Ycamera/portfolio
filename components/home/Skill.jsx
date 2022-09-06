@@ -3,13 +3,14 @@ import Motion, { MotionY } from "/components/Motion";
 
 import LayoutTop from "./LayoutTop";
 import LearnMoreButton from "./LearnMoreButton";
+import WordAppearEffect from "./WordAppearEffect";
 
 const Skill = () => {
 	return (
 		<LayoutTop>
 			<MotionY y={100} disappearDelay={0.1}>
 				<Heading as="h1" fontWeight="400" fontSize="4rem" letterSpacing="0.5rem" zIndex="10">
-					WHAT I CAN DO
+					<WordAppearEffect text="WHAT I CAN DO" />
 				</Heading>
 			</MotionY>
 			<LearnMoreButton link="skill" />

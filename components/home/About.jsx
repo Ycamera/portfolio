@@ -4,12 +4,15 @@ import LayoutTop from "./LayoutTop";
 
 import LearnMoreButton from "./LearnMoreButton";
 
+import WordAppearEffect from "./WordAppearEffect";
+
 const About = () => {
 	return (
 		<LayoutTop>
 			<MotionY y={100} disappearDelay={0.1}>
 				<Heading as="h1" fontWeight="400" fontSize="4rem" letterSpacing="0.5rem">
-					WHO I AM
+					{/* WHO I AM */}
+					<WordAppearEffect text="WHO I AM" />
 				</Heading>
 			</MotionY>
 			<LearnMoreButton link="about" />

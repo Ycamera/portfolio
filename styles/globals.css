@@ -6,10 +6,12 @@
 
 @import "./css/nav";
 @import "./css/index";
+@import "./css/contact";
 
 html,
 body {
 	font-family: Sansation, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	overflow-x: hidden;
 }
 html {
 	background-color: #000;

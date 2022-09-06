@@ -29,7 +29,8 @@ const Square = ({ delay }) => {
 };
 
 const NavLink = ({ text, link, i, links, closeMenu }) => {
-	const current = useRouter()?.asPath === link;
+	const linkPath = link !== "/" ? "/" + link : link;
+	const current = useRouter()?.asPath === linkPath;
 
 	const delay = i * 0.1;
 
@@ -136,6 +137,13 @@ const Nav = () => {
 						cursor="pointer"
 						className={`menu ${menuShow && "open"}`}
 						onClick={toggleMenu}
+						_before={{
+							w: "100%",
+							h: "125%",
+							pos: "absolute",
+							content: "''",
+							bg: color.primary,
+						}}
 					>
 						<Text as="span" color={color.light} fontSize="0.8rem" transition="0.5s" zIndex={"1"}>
 							{!menuShow ? text.MENU : text.CLOSE}
