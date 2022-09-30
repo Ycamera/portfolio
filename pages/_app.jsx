@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
 	return (
 		<ChakraProvider>
 			<BackgroundCanvas>
-				<Nav />
+				<Nav setIndex={setIndex} />
 				<AnimatePresence exitBeforeEnter>
 					<Component
 						{...pageProps}

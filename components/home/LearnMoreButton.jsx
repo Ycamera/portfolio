@@ -5,9 +5,9 @@ import NextLink from "next/link";
 const LearnMoreButton = ({ link, text = "Learn More" }) => {
 	return (
 		<NextLink href={link}>
-			<a>
+			<a style={{ marginTop: "2rem" }}>
 				<MotionY y={100} appearDelay={0.25}>
-					<Flex justifyContent={"center"} mt="2rem" onMouseEnter={() => {}}>
+					<Flex justifyContent={"center"} onMouseEnter={() => {}}>
 						<Box
 							display="inline-block"
 							padding="0.5rem 1.5rem"

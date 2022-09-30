@@ -3,7 +3,6 @@ import { Box, Flex } from "@chakra-ui/react";
 import Motion from "./Motion";
 
 const Mirror = ({ w, i, reverseDelay, delay, reverse, duration, firstRendering }) => {
-	console.log(firstRendering);
 	return (
 		<Box w={`${w}%`} h="100vh" pos="relative">
 			<Motion
@@ -11,15 +10,9 @@ const Mirror = ({ w, i, reverseDelay, delay, reverse, duration, firstRendering }
 				animate={{ width: "0" }}
 				transition={{ duration, delay: reverse ? reverseDelay : delay }}
 				exit={{ width: "100%" }}
+				style={{ transformOrigin: reverse ? "right" : "left" }}
 			>
-				<Box
-					as="span"
-					bg="#000"
-					w="100%"
-					h="100%"
-					pos="absolute"
-					style={{ transformOrigin: reverse ? "right" : "left" }}
-				/>
+				<Box as="span" bg="#000" w="100%" h="100%" pos="absolute" />
 			</Motion>
 		</Box>
 	);
@@ -27,8 +20,8 @@ const Mirror = ({ w, i, reverseDelay, delay, reverse, duration, firstRendering }
 
 const TransitionEffect = ({ reverseEffect = false, firstRendering = true }) => {
 	const numberOfLine = 30;
-	const delayFrequency = 0.03;
-	const duration = 0.5;
+	const delayFrequency = 0.035;
+	const duration = 0.6;
 
 	const arr = new Array(numberOfLine).fill().map((_, i) => i);
 	const width = 100 / numberOfLine;

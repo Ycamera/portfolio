@@ -10,7 +10,9 @@ const WordMotion = ({ word, i }) => {
 	return (
 		<MotionY y={75} appearDelay={i * 0.03} disappearDelay={i * 0.03} customTransition={customTransition}>
 			<pre>
-				<Text as="span">{word}</Text>
+				<Text as="span" pointerEvents="none" userSelect={"none"}>
+					{word}
+				</Text>
 			</pre>
 		</MotionY>
 	);

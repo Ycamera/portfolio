@@ -1,5 +1,11 @@
 .nav {
 	.menu {
+		.menu-line {
+			box-sizing: content-box;
+
+			transition: top 0.5s cubic-bezier(1, 0.01, 0.24, 0.81) 0.1s,
+				transform 0.5s cubic-bezier(1, 0.01, 0.24, 0.81) 0.1s, width 0.2s, height 0.2s;
+		}
 		&:hover,
 		&.open {
 			span {
@@ -14,12 +20,6 @@
 				height: 125%;
 				transition: top 0.2s, transform 0.2s, width 0.5s cubic-bezier(1, 0.01, 0.24, 0.81) 0.1s;
 			}
-		}
-		.menu-line {
-			box-sizing: content-box;
-
-			transition: top 0.5s cubic-bezier(1, 0.01, 0.24, 0.81) 0.1s,
-				transform 0.5s cubic-bezier(1, 0.01, 0.24, 0.81) 0.1s, width 0.2s, height 0.2s;
 		}
 	}
 }

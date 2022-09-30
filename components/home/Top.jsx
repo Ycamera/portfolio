@@ -5,17 +5,23 @@ import LayoutTop from "./LayoutTop";
 import BottomSmoke from "./BottomSmoke";
 import Motion, { MotionY } from "/components/Motion";
 import { AnimatePresence } from "framer-motion";
+
+const notSelectable = {
+	pointerEvents: "none",
+	userSelect: "none",
+};
+
 const Top = ({ show }) => {
 	return (
 		<LayoutTop>
 			<MotionY y={100} disappearDelay={0.1}>
-				<Heading as="h1" fontWeight="light" fontSize="4rem" letterSpacing="0.5rem">
+				<Heading as="h1" fontWeight="bold" fontSize="4rem" letterSpacing="0.5rem" {...notSelectable}>
 					RYOSUKE
 				</Heading>
 			</MotionY>
 
 			<MotionY y={100} appearDelay={0.1}>
-				<Box pos="absolute" zIndex="-1" fontSize="16rem" color="rgba(255,255,255,0.2)">
+				<Box pos="absolute" zIndex="-1" fontSize="16rem" color="rgba(255,255,255,0.2)" {...notSelectable}>
 					K
 				</Box>
 			</MotionY>

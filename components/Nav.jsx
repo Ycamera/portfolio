@@ -28,7 +28,7 @@ const Square = ({ delay }) => {
 	);
 };
 
-const NavLink = ({ text, link, i, links, closeMenu }) => {
+const NavLink = ({ text, link, i, links, closeMenu, setIndex }) => {
 	const linkPath = link !== "/" ? "/" + link : link;
 	const current = useRouter()?.asPath === linkPath;
 
@@ -47,7 +47,12 @@ const NavLink = ({ text, link, i, links, closeMenu }) => {
 	return (
 		<Flex as="li" justifyContent={"center"} {...(i === 0 && { mt: "10rem" })}>
 			<NextLink href={link}>
-				<a style={{ width: "100%" }}>
+				<a
+					style={{ width: "100%" }}
+					onClick={() => {
+						setIndex(i);
+					}}
+				>
 					<Flex
 						justifyContent="start"
 						alignItems={"center"}
@@ -92,7 +97,7 @@ const NavLink = ({ text, link, i, links, closeMenu }) => {
 	);
 };
 
-const Nav = () => {
+const Nav = (props) => {
 	const [menuShow, setMenuShow] = useState(false);
 	function toggleMenu() {
 		setMenuShow((prev) => !prev);
@@ -117,50 +122,52 @@ const Nav = () => {
 	}, [menuShow]);
 
 	const links = [
-		{ text: "HOME", link: "/" },
-		{ text: "ABOUT", link: "about" },
-		{ text: "SKILL", link: "skill" },
-		{ text: "CONTACT", link: "contact" },
+		{ text: "HOME", link: "/", index: 0 },
+		{ text: "ABOUT", link: "about", index: 1 },
+		{ text: "SKILL", link: "skill", index: 2 },
+		{ text: "CONTACT", link: "contact", index: 3 },
 	];
 
 	return (
 		<Box pos="fixed" w="100%" h="100%" zIndex={1} className="nav" pointerEvents={"none"}>
 			<Flex justifyContent={"center"} w="100%" zIndex="5">
 				<Flex flexDirection="column" alignItems="center" justifyContent={"center"} pointerEvents={"auto"}>
-					<Flex
-						pos="relative"
-						mt="3.125rem"
-						width="3.5rem"
-						height="1rem"
-						alignItems={"center"}
-						justifyContent="center"
-						cursor="pointer"
-						className={`menu ${menuShow && "open"}`}
-						onClick={toggleMenu}
-						_before={{
-							w: "100%",
-							h: "125%",
-							pos: "absolute",
-							content: "''",
-							bg: color.primary,
-						}}
-					>
-						<Text as="span" color={color.light} fontSize="0.8rem" transition="0.5s" zIndex={"1"}>
-							{!menuShow ? text.MENU : text.CLOSE}
-						</Text>
+					<Motion initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+						<Flex
+							pos="relative"
+							mt="3.125rem"
+							width="3.5rem"
+							height="1rem"
+							alignItems={"center"}
+							justifyContent="center"
+							cursor="pointer"
+							className={`menu ${menuShow && "open"}`}
+							onClick={toggleMenu}
+							_before={{
+								w: "100%",
+								h: "125%",
+								pos: "absolute",
+								content: "''",
+								bg: color.primary,
+							}}
+						>
+							<Text as="span" color={color.light} fontSize="0.8rem" transition="0.5s" zIndex={"1"}>
+								{!menuShow ? text.MENU : text.CLOSE}
+							</Text>
 
-						<Box
-							pos="absolute"
-							transform="translate(-50%,-2.5rem)"
-							left="50%"
-							top="0"
-							bg={color.light}
-							w="0.06rem"
-							height="1.875rem"
-							className="menu-line"
-							transition="0.3s"
-						/>
-					</Flex>
+							<Box
+								pos="absolute"
+								transform="translate(-50%,-2.5rem)"
+								left="50%"
+								top="0"
+								bg={color.light}
+								w="0.06rem"
+								height="1.875rem"
+								className="menu-line"
+								transition="0.3s"
+							/>
+						</Flex>
+					</Motion>
 				</Flex>
 			</Flex>
 			<AnimatePresence>
@@ -184,15 +191,16 @@ const Nav = () => {
 								pointerEvents={"auto"}
 								zIndex="-1"
 							>
-								{links.map(({ text, link }, i) => {
+								{links.map(({ text, link, index }) => {
 									return (
 										<NavLink
 											text={text}
 											link={link}
-											i={i}
+											i={index}
 											links={links}
 											closeMenu={closeMenu}
 											key={text}
+											setIndex={props.setIndex}
 										/>
 									);
 								})}

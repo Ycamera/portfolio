@@ -6,6 +6,7 @@ import BottomSmoke from "./BottomSmoke";
 const LayoutTop = ({ children }) => {
 	return (
 		<Flex
+			as="section"
 			flexDirection="column"
 			justifyContent={"center"}
 			alignItems="center"
