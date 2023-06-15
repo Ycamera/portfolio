@@ -1,7 +1,12 @@
 import React from "react";
+import TransitionEffect from "../components/TransitionEffect";
 
 const about = () => {
-	return <div>about</div>;
+  return (
+    <>
+      <TransitionEffect />
+    </>
+  );
 };
 
 export default about;

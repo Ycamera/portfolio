@@ -1,7 +1,7 @@
 @font-face {
-	font-family: Sansation;
-	src: url("./font/sansation/Sansation_Bold.ttf"), url("./font/sansation/Sansation_Bold_Italic.ttf"),
-		url("./font/sansation/Sansation_Regular.ttf"), url("./font/sansation/Sansation_Light.ttf");
+  font-family: Sansation;
+  src: url("./font/sansation/Sansation_Bold.ttf"), url("./font/sansation/Sansation_Bold_Italic.ttf"), url("./font/sansation/Sansation_Regular.ttf"),
+    url("./font/sansation/Sansation_Light.ttf");
 }
 
 @import "./css/nav";
@@ -10,22 +10,32 @@
 
 html,
 body {
-	font-family: Sansation, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	overflow-x: hidden;
+  font-family: Sansation, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow-x: hidden;
+  background-color: #000;
 }
+
 html {
-	background-color: #000;
+  font-size: max(0.9vw, 14px);
+  overscroll-behavior-y: none;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+}
+.chakra-ui-light {
+  background-color: #000 !important;
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	color: #fff;
-	font-family: Sansation;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: Sansation;
 }
