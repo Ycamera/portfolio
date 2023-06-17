@@ -17,10 +17,8 @@ body {
 
 html {
   font-size: max(0.9vw, 14px);
-  overscroll-behavior-y: none;
-  position: fixed;
+
   top: 0;
-  overflow: hidden;
   width: 100%;
 }
 .chakra-ui-light {

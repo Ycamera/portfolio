@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Circle } from "@chakra-ui/react";
 
 import { color } from "/styles/fontColor";
 import LayoutTop from "./LayoutTop";
@@ -11,7 +11,7 @@ const notSelectable = {
   userSelect: "none",
 };
 
-const Top = ({ show }) => {
+const Top = ({ show, touchDevice }) => {
   return (
     <LayoutTop>
       <MotionY y={100} disappearDelay={0.1}>
@@ -25,21 +25,26 @@ const Top = ({ show }) => {
           K
         </Box>
       </MotionY>
-      <ScrollComponent />
+      <ScrollComponent touchDevice={touchDevice} />
     </LayoutTop>
   );
 };
 
-const ScrollComponent = () => {
+const ScrollComponent = ({ touchDevice }) => {
   return (
-    <Motion initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-      <Box pos="absolute" bottom="10%">
-        <Text as="span" color={color.light} fontSize="0.8rem" zIndex={"1"}>
-          SCROLL
-        </Text>
-        <Box inset="0" margin="auto" bottom="0" bg={color.light} w="0.06rem" height="1.875rem" className="menu-line" my="0.625rem" />
-      </Box>
-    </Motion>
+    <AnimatePresence exitBeforeEnter>
+      {!touchDevice && (
+        <Motion initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+          <Box pos="absolute" bottom="10%">
+            <Text as="span" color={color.light} fontSize="0.8rem" zIndex={"1"}>
+              SCROLL
+            </Text>
+            <Box inset="0" margin="auto" bottom="0" bg={color.light} w="0.06rem" height="1.875rem" className="menu-line" my="0.625rem" />
+          </Box>
+        </Motion>
+      )}
+    </AnimatePresence>
   );
 };
+
 export default Top;
