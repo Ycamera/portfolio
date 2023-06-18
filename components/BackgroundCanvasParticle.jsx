@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Box } from "@chakra-ui/react";
 import { color } from "/styles/fontColor";
 
-const BackgroundCanvasParticle = ({ children, zIndex = -10 }) => {
+const BackgroundCanvasParticle = ({ zIndex = -10 }) => {
   useEffect(() => {
     const canvas = document.getElementById("canvasBgParticle");
     let ctx = canvas.getContext("2d");
@@ -25,6 +25,7 @@ const BackgroundCanvasParticle = ({ children, zIndex = -10 }) => {
       addEventListener(eventName, createParticle);
     });
     addEventListener("touchmove", preventDefault);
+    addEventListener("touchstart", preventDefault);
 
     function preventDefault(e) {
       e.stopPropagation();
@@ -142,7 +143,7 @@ const BackgroundCanvasParticle = ({ children, zIndex = -10 }) => {
     };
   }, []);
 
-  return <Box as="canvas" id="canvasBgParticle" zIndex={zIndex} pos="fixed" top="0" left="0" w="100%" h="100vh" pointerEvents={"none"} />;
+  return <Box as="canvas" id="canvasBgParticle" zIndex={zIndex} pos="fixed" top="0" left="0" w="100%" h="100%" pointerEvents={"none"} />;
 };
 
 export default BackgroundCanvasParticle;
