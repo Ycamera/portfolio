@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Box } from "@chakra-ui/react";
-import { color } from "/styles/fontColor";
 
 const BackgroundCanvasParticle = ({ zIndex = -10 }) => {
   useEffect(() => {
@@ -140,6 +139,7 @@ const BackgroundCanvasParticle = ({ zIndex = -10 }) => {
         removeEventListener(eventName, createParticle);
       });
       removeEventListener("touchmove", preventDefault);
+      removeEventListener("touchstart", preventDefault);
     };
   }, []);
 

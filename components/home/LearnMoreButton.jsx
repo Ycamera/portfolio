@@ -1,6 +1,6 @@
 import Motion, { MotionY } from "/components/Motion";
 import { Text, Flex, Box } from "@chakra-ui/react";
-import { color } from "/styles/fontColor";
+import { color } from "/styles/variable";
 import NextLink from "next/link";
 const LearnMoreButton = ({ link, text = "Learn More" }) => {
   return (

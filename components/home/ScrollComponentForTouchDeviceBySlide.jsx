@@ -1,5 +1,5 @@
 import Motion from "../Motion";
-import { color } from "/styles/fontColor";
+import { color } from "/styles/variable";
 import { Box, Flex } from "@chakra-ui/react";
 import React, { useState, useContext } from "react";
 import { RootFontSizeContext } from "../../pages/_app";
@@ -46,7 +46,14 @@ const ScrollComponentForTouchDeviceBySlide = ({ setIndex, index, indexLength }) 
           onDrag={onDragMoveMousePosition}
         >
           <Flex justifyContent="center" alignItems="center">
-            <Flex w="0.15rem" h="1.8rem" boxShadow={`inset 0 0 0.5rem ${color.light}`} justifyContent="center" alignItems="center"></Flex>
+            <Flex
+              borderRadius="50%"
+              w="1.3rem"
+              h="1.3rem"
+              boxShadow={`inset 0 0 0.5rem ${color.light}`}
+              justifyContent="center"
+              alignItems="center"
+            ></Flex>
           </Flex>
         </Motion>
       </Flex>

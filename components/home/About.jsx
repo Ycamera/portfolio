@@ -1,7 +1,7 @@
 import WordComponent from "./WordComponent";
 
 const About = () => {
-  return <WordComponent text="何者か？" link="about" />;
+  return <WordComponent text="何者？" link="about" />;
 };
 
 export default About;

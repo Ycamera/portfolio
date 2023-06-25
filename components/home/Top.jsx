@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Text, Circle } from "@chakra-ui/react";
 
-import { color } from "/styles/fontColor";
+import { color } from "/styles/variable";
 import LayoutTop from "./LayoutTop";
 import BottomSmoke from "./BottomSmoke";
 import Motion, { MotionY } from "/components/Motion";

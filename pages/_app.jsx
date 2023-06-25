@@ -5,9 +5,11 @@ import { ChakraProvider } from "@chakra-ui/react";
 import React, { useState, useEffect, useContext } from "react";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
-import { getRootFontSize } from "../js/getRootFontSize";
+import { getRootFontSize } from "../js/getRootFontSize.mjs";
+import BottomSmoke from "../components/home/BottomSmoke";
 
 export const RootFontSizeContext = React.createContext();
+export const PointerContext = React.createContext();
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -15,6 +17,7 @@ function MyApp({ Component, pageProps }) {
   const [firstRendering, setFirstRendering] = useState(0);
   const [touchDevice, setTouchDevice] = useState(false);
   const [rootFontSize, setRootFontSize] = useState(14);
+  const [pointer, setPointer] = useState("default");
 
   //ルートフォントサイズを取得
   useEffect(() => {
@@ -30,6 +33,8 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   useEffect(() => {
+    setPointer("default");
+
     const htmlEl = document.querySelector("html");
 
     if (router.asPath === "/") {
@@ -45,8 +50,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ChakraProvider>
-      <RootFontSizeContext.Provider value={rootFontSize}>
-        <BackgroundCanvas>
+      <PointerContext.Provider value={{ pointer, setPointer }}>
+        <RootFontSizeContext.Provider value={rootFontSize}>
+          <BackgroundCanvas />
           <Nav setIndex={setIndex} />
           <AnimatePresence exitBeforeEnter>
             <Component
@@ -60,8 +66,9 @@ function MyApp({ Component, pageProps }) {
               setTouchDevice={setTouchDevice}
             />
           </AnimatePresence>
-        </BackgroundCanvas>
-      </RootFontSizeContext.Provider>
+          {/* </BackgroundCanvas> */}
+        </RootFontSizeContext.Provider>
+      </PointerContext.Provider>
     </ChakraProvider>
   );
 }

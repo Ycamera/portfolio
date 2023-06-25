@@ -39,7 +39,7 @@ const TransitionEffect = ({ reverseEffect = false, firstRendering = true }) => {
   }, []);
 
   return (
-    <Flex pos={"fixed"} top="0" w="100vw" h="100vh" zIndex={1000} pointerEvents="none">
+    <Flex pos={"fixed"} top="0" w="100vw" h="100vh" zIndex={10000} pointerEvents="none">
       {arr.map((i) => {
         return (
           <Mirror

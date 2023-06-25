@@ -1,12 +1,12 @@
 import React from "react";
 import { Box, Flex } from "@chakra-ui/react";
 
-const Layout = ({ children }) => {
+const Container = ({ children }) => {
   return (
-    <Box w="100%" paddingInline="1rem">
+    <Box w="min(100%,60rem)" marginInline="auto">
       {children}
     </Box>
   );
 };
 
-export default Layout;
+export default Container;

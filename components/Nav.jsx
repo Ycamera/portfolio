@@ -4,7 +4,7 @@ import { Flex, Box, Text } from "@chakra-ui/react";
 import Motion from "./Motion";
 import { AnimatePresence } from "framer-motion";
 import NextLink from "next/link";
-import { color } from "/styles/fontColor";
+import { color } from "/styles/variable";
 import { useRouter } from "next/router";
 import { textEffect } from "/lib/textEffect";
 
@@ -119,7 +119,7 @@ const Nav = (props) => {
   ];
 
   return (
-    <Box pos="fixed" w="100%" h="100%" zIndex={1} className="nav" pointerEvents={"none"}>
+    <Box pos="fixed" w="100%" h="100%" zIndex={1000} className="nav" pointerEvents={"none"} top="0" left="0">
       <Flex justifyContent={"center"} w="100%" zIndex="5">
         <Flex flexDirection="column" alignItems="center" justifyContent={"center"} pointerEvents={"auto"}>
           <Motion initial={{ opacity: 0 }} animate={{ opacity: 1 }}>

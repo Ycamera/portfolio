@@ -11,7 +11,7 @@ import Motion from "/components/Motion";
 import { Box, Flex } from "@chakra-ui/react";
 import { Slot } from "@radix-ui/react-slot";
 import { AnimatePresence } from "framer-motion";
-import { color } from "/styles/fontColor";
+import { color } from "/styles/variable";
 import BottomSmoke from "../components/home/BottomSmoke";
 
 import ScrollComponentForTouchDeviceBySlide from "../components/home/ScrollComponentForTouchDeviceBySlide";
@@ -122,7 +122,6 @@ export default function Home(props) {
               </AnimatePresence>
             </Box>
           </Motion>
-          <BottomSmoke />
 
           {props.touchDevice && <ScrollComponentForTouchDeviceBySlide setIndex={setIndex} index={props.index} indexLength={elements.length} />}
           <SideNav elements={elements} index={props.index} />
@@ -131,43 +130,3 @@ export default function Home(props) {
     </TransitionDirection.Provider>
   );
 }
-
-// const ScrollComponentForTouchDevice = (props) => {
-//   return (
-//     <Motion>
-//       <Flex pos="absolute" bottom="14%" right="1rem" columnGap={"1rem"}>
-//         <ScrollComponentForTouchDeviceOfCircle {...props} direction="up" />
-//         <ScrollComponentForTouchDeviceOfCircle {...props} direction="down" />
-//       </Flex>
-//     </Motion>
-//   );
-// };
-// const ScrollComponentForTouchDeviceOfCircle = ({ direction, setIndex, index, indexLength }) => {
-//   const isUp = direction === "up";
-//   const arrowIsShow = isUp ? !(index === 0) : !(index === indexLength - 1);
-
-//   const arrowIsShowAnimate = {
-//     opacity: 1,
-//     y: 0,
-//   };
-//   const arrowIsHideAnimate = {
-//     opacity: 0,
-//     y: isUp ? "1rem" : "-1rem",
-//   };
-//   return (
-//     <Motion initial={{ opacity: 0 }} animate={arrowIsShow ? { ...arrowIsShowAnimate } : { ...arrowIsHideAnimate }} end={{ opacity: 0 }}>
-//       <Flex
-//         alignItems="center"
-//         justifyContent="center"
-//         color={color.light}
-//         w="4rem"
-//         h="4rem"
-//         borderRadius="50%"
-//         onClick={() => setIndex(isUp ? -1 : 1)}
-//         style={{ writingMode: "vertical-rl" }}
-//       >
-//         {isUp ? "UP" : "DOWN"}
-//       </Flex>
-//     </Motion>
-//   );
-// };
