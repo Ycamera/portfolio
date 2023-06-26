@@ -4,6 +4,7 @@ import Motion from "../Motion";
 import { color, letterSpacing } from "/styles/variable.mjs";
 import { PointerContext } from "../../pages/_app";
 import MousePointerArea from "../MousePointerArea";
+import { ParallaxElement } from "../Parallax";
 
 const NameComponent = () => {
   return (

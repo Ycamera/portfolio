@@ -7,6 +7,7 @@ import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import { getRootFontSize } from "../js/getRootFontSize.mjs";
 import BottomSmoke from "../components/home/BottomSmoke";
+import BackgroundNoise from "../components/BackgroundNoise";
 
 export const RootFontSizeContext = React.createContext();
 export const PointerContext = React.createContext();
@@ -52,7 +53,8 @@ function MyApp({ Component, pageProps }) {
     <ChakraProvider>
       <PointerContext.Provider value={{ pointer, setPointer }}>
         <RootFontSizeContext.Provider value={rootFontSize}>
-          <BackgroundCanvas />
+          <BackgroundNoise />
+          <BottomSmoke />
           <Nav setIndex={setIndex} />
           <AnimatePresence exitBeforeEnter>
             <Component

@@ -7,7 +7,7 @@ export const TextSM = ({ children, style }) => {
     <Box
       as="span"
       display="block"
-      fontSize="1rem"
+      fontSize="0.8rem"
       fontWeight="normal"
       fontFamily="Klee One"
       color={color.light}

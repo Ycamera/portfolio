@@ -8,32 +8,24 @@ import Container from "../components/Container";
 import MousePointer from "../components/MousePointer";
 import MousePointerArea from "../components/MousePointerArea";
 import BottomSmoke from "../components/home/BottomSmoke";
+import Parallax from "../components/Parallax";
 
 const about = () => {
-  // function preventDefault(e) {
-  //   e.stopPropagation();
-  //   e.preventDefault();
-  // }
-  // useEffect(() => {
-  //   addEventListener("touchmove", preventDefault);
-  //   addEventListener("touchstart", preventDefault);
-  //   return () => {
-  //     removeEventListener("touchmove", preventDefault);
-  //     removeEventListener("touchstart", preventDefault);
-  //   };
-  // }, []);
   return (
-    <Box pos="relative" top="0" left="0" zIndex="15" w="100%" h="100%" userSelect="none">
+    <>
       <TransitionEffect />
-      <MousePointer />
-      <Layout>
-        <Container>
-          <NameComponent />
-          <EducationalBackground />
-          <WorkExperience />
-        </Container>
-      </Layout>
-    </Box>
+      <Box pos="relative" paddingBottom="10rem" top="0" left="0" zIndex="15" w="100%" h="100%" userSelect="none">
+        <MousePointer />
+
+        <Layout>
+          <Container>
+            <NameComponent />
+            <EducationalBackground />
+            <WorkExperience />
+          </Container>
+        </Layout>
+      </Box>
+    </>
   );
 };
 

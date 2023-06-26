@@ -119,7 +119,7 @@ const Nav = (props) => {
   ];
 
   return (
-    <Box pos="fixed" w="100%" h="100%" zIndex={1000} className="nav" pointerEvents={"none"} top="0" left="0">
+    <Box pos="fixed" w="100%" h="100%" zIndex={200} className="nav" pointerEvents={"none"} top="0" left="0">
       <Flex justifyContent={"center"} w="100%" zIndex="5">
         <Flex flexDirection="column" alignItems="center" justifyContent={"center"} pointerEvents={"auto"}>
           <Motion initial={{ opacity: 0 }} animate={{ opacity: 1 }}>

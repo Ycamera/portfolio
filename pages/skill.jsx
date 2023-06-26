@@ -9,20 +9,22 @@ import MousePointer from "../components/MousePointer";
 
 const skill = () => {
   return (
-    <Box pos="relative" top="0" left="0" zIndex="15" w="100%" h="100%">
+    <>
       <TransitionEffect />
-      <MousePointer />
-      <Layout>
-        <Container>
-          <Box mt="30vh">
-            <Heading as="h1" textAlign="center" fontSize={{ base: "2.5rem", sm: "4rem" }} color="" letterSpacing={letterSpacing.lg}>
-              SKILL
-            </Heading>
-            <SiteCards />
-          </Box>
-        </Container>
-      </Layout>
-    </Box>
+      <Box pos="relative" top="0" left="0" zIndex="15" w="100%" h="100%">
+        <MousePointer />
+        <Layout>
+          <Container>
+            <Box mt="30vh">
+              <Heading as="h1" textAlign="center" fontSize={{ base: "2.5rem", sm: "4rem" }} color="" letterSpacing={letterSpacing.lg}>
+                SKILL
+              </Heading>
+              <SiteCards />
+            </Box>
+          </Container>
+        </Layout>
+      </Box>
+    </>
   );
 };
 
