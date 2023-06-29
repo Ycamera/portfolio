@@ -19,7 +19,7 @@ const Mirror = ({ w, i, reverseDelay, delay, reverse, duration, firstRendering }
 };
 
 const TransitionEffect = ({ reverseEffect = false, firstRendering = true }) => {
-  const numberOfLine = 30;
+  const numberOfLine = 20;
   const delayFrequency = 0.035;
   const duration = 0.6;
 

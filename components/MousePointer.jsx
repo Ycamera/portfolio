@@ -21,8 +21,8 @@ const MousePointer = () => {
 
   const followCursor = { y: mouse.y, x: mouse.x };
   const variants = {
-    default: { size: "0rem", bg: color.light400, style: { filter: "blur(0.1rem)" } },
-    lg: { size: "12rem", bg: color.secondary, style: { filter: "blur(0.5rem)" } },
+    default: { size: "0rem", bg: color.light300, style: { filter: "blur(0.1rem)" } },
+    lg: { size: "10rem", bg: color.secondary, style: { filter: "blur(0.5rem)" } },
     view: { size: "6rem", fontSize: "1rem", bg: color.secondary, text: "VIEW", mixBlendMode: "normal", style: { color: color.primary } },
   };
 
@@ -42,7 +42,7 @@ const MousePointer = () => {
           pos="fixed"
           top="0"
           left="0"
-          zIndex="1"
+          zIndex="11000"
           pointerEvents={"none"}
           transition="mix-blend-mode 0.3s"
           mixBlendMode={variants[pointer]?.mixBlendMode ? variants[pointer]?.mixBlendMode : "difference"}
@@ -54,23 +54,23 @@ const MousePointer = () => {
             pos: "absolute",
             inset: "0",
             margin: "auto",
-            bg: variants[pointer].bg,
+            bg: variants[pointer]?.bg,
 
             pointerEvents: "none",
             // filter: "blur(0.5rem)",
             transform: "translate(-50%,-50%)",
             transition: "0.3s",
-            ...(variants[pointer].style && { ...variants[pointer].style }),
+            ...(variants[pointer]?.style && { ...variants[pointer]?.style }),
           }}
         >
           <Flex
             // borderRadius="50%"
             // bg={variants[pointer].bg}
-            h={variants[pointer].size}
-            w={variants[pointer].size}
+            h={variants[pointer]?.size}
+            w={variants[pointer]?.size}
             transform="translate(-50%,-50%)"
             transition="0.3s"
-            {...(variants[pointer].style && { ...variants[pointer].style })}
+            {...(variants[pointer]?.style && { ...variants[pointer]?.style })}
             justifyContent="center"
             alignItems="center"
             fontSize={variants[pointer]?.fontSize}

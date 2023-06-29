@@ -8,6 +8,8 @@ import { useRouter } from "next/router";
 import { getRootFontSize } from "../js/getRootFontSize.mjs";
 import BottomSmoke from "../components/home/BottomSmoke";
 import BackgroundNoise from "../components/BackgroundNoise";
+import { theme } from "../styles/chakraUI/theme";
+import SmoothScroll from "../components/SmoothScroll";
 
 export const RootFontSizeContext = React.createContext();
 export const PointerContext = React.createContext();
@@ -49,8 +51,10 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router.asPath]);
 
+  SmoothScroll();
+
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <PointerContext.Provider value={{ pointer, setPointer }}>
         <RootFontSizeContext.Provider value={rootFontSize}>
           <BackgroundNoise />

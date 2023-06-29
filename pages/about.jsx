@@ -9,11 +9,13 @@ import MousePointer from "../components/MousePointer";
 import MousePointerArea from "../components/MousePointerArea";
 import BottomSmoke from "../components/home/BottomSmoke";
 import Parallax from "../components/Parallax";
+import { color } from "../styles/variable.mjs";
 
 const about = () => {
   return (
     <>
       <TransitionEffect />
+
       <Box pos="relative" paddingBottom="10rem" top="0" left="0" zIndex="15" w="100%" h="100%" userSelect="none">
         <MousePointer />
 
@@ -21,6 +23,9 @@ const about = () => {
           <Container>
             <NameComponent />
             <EducationalBackground />
+
+            <Box w="60%" h="0.1rem" marginBlock="10rem" marginInline="auto" bg={color.light300} filter="blur(0.1rem)"></Box>
+
             <WorkExperience />
           </Container>
         </Layout>
