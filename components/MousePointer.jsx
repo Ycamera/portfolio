@@ -3,10 +3,13 @@ import { Box, Flex } from "@chakra-ui/react";
 import Motion from "./Motion";
 import { PointerContext, RootFontSizeContext } from "../pages/_app";
 import { color } from "../styles/variable.mjs";
+import { useRouter } from "next/router";
 
 const MousePointer = () => {
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  const [mouse, setMouse] = useState({ x: -1000, y: -1000 });
   const { pointer, setPointer } = useContext(PointerContext);
+
+  const router = useRouter();
 
   function getMousePos(e) {
     setMouse({ x: e.x, y: e.y });
@@ -34,6 +37,10 @@ const MousePointer = () => {
     duration: 0,
     type: "spring",
   };
+
+  useEffect(() => {
+    setPointer("default");
+  }, [router.asPath]);
 
   return (
     mouse && (

@@ -1,14 +1,15 @@
 import React, { useRef, useState, useEffect, useContext } from "react";
 import { Box, Flex } from "@chakra-ui/react";
 import Motion from "./Motion";
+import { RootFontSizeContext } from "../pages/_app";
 
-export const ParallaxContext = React.createContext();
+const Parallax = ({ children, rotateDegree = 5, translate = 0.5 }) => {
+  const rootFontSize = useContext(RootFontSizeContext) / 2;
 
-const ParallaxContainer = ({ children }) => {
   const containerRef = useRef(null);
 
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
-  const [parallax, setParallax] = useState({ y: 0, x: 0 });
+  const [rotate, setRotate] = useState({ y: 0, x: 0, rotateX: 0, rotateY: 0 });
 
   function setMousePos(e) {
     e.preventDefault();
@@ -33,42 +34,31 @@ const ParallaxContainer = ({ children }) => {
     const percentX = (mouse.x - centerX) / (w / 2);
     const percentY = (mouse.y - scrollTop - centerY) / (h / 2);
 
-    setParallax({ y: percentY, x: percentX });
+    // const rotateX = percentY * rotateDegree * -1;
+    // const rotateY = percentX * rotateDegree;
+
+    const translateX = percentX * rootFontSize * translate;
+    const translateY = percentY * rootFontSize * translate;
+
+    // setRotate({ y: translateY, x: translateX, rotateX, rotateY });
+    setRotate({ y: translateY, x: translateX, rotateX: 0, rotateY: 0 });
   }, [mouse]);
 
   return (
-    <ParallaxContext.Provider value={parallax}>
-      <Box
-        pos="fixed"
-        top="0"
-        left="0"
-        w="100%"
-        h="100vh"
-        zIndex="199"
-        onPointerMove={setMousePos}
-        onPointerLeave={() => {
-          setMouse({ x: 0, y: 0 });
-          setParallax({ y: 0, x: 0 });
-        }}
-        ref={containerRef}
-        // pointerEvents="none"
-        userSelect="none"
-      />
-      {children}
-    </ParallaxContext.Provider>
+    <Box
+      onPointerMove={setMousePos}
+      onPointerLeave={() => {
+        setMouse({ x: 0, y: 0 });
+        setRotate({ y: 0, x: 0, rotateX: 0, rotateY: 0 });
+      }}
+      ref={containerRef}
+      userSelect="none"
+    >
+      <Motion animate={{ ...rotate }}>
+        <Box>{children}</Box>
+      </Motion>
+    </Box>
   );
 };
-export default ParallaxContainer;
 
-export const ParallaxElement = ({ children, xy = 15 }) => {
-  const parallax = useContext(ParallaxContext);
-
-  const x = parallax?.x * xy * -1;
-  const y = parallax?.y * xy * -1;
-
-  return (
-    <Motion animate={{ x, y }}>
-      <Box>{children}</Box>
-    </Motion>
-  );
-};
+export default Parallax;

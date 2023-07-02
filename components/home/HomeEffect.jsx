@@ -43,7 +43,6 @@ const HomeEffect = ({ firstRendering, setFirstRendering, index, loaded }) => {
   return (
     show && (
       <Box pos="fixed" w="100%" h="100%" zIndex="100" top="0" pointerEvents="none">
-        {/* <Bg /> */}
         <Motion
           initial={{ clipPath: "polygon(0 0, 100% 0 ,100% 100% ,0 100%)" }}
           animate={{
@@ -52,8 +51,6 @@ const HomeEffect = ({ firstRendering, setFirstRendering, index, loaded }) => {
           transition={{ duration: 1, delay: 1, ease: [0.7, 0.32, 0.21, 0.91] }}
         >
           <Flex pos="absolute" w="100%" h="100%" zIndex="100" bg="#000" pointerEvents="none" justifyContent={"center"} alignItems="center">
-            {/* <Particle /> */}
-
             <Box pos="relative" overflow={"hidden"} px="1rem" py="0.5rem">
               <Text as="span" fontSize="1.2rem">
                 {text}
@@ -71,8 +68,6 @@ const HomeEffect = ({ firstRendering, setFirstRendering, index, loaded }) => {
             </Box>
           </Flex>
         </Motion>
-        {/* <Line x="-100%" />
-			<Line x="100%" left={false} /> */}
       </Box>
     )
   );

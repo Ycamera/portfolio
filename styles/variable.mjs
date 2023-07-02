@@ -3,8 +3,11 @@ export const color = {
   secondary: "#fff",
   light: "rgb(140 140 140)",
   darklight: "rgba(255,255,255,0.2)",
+  dark: "#141414",
+  deepdark: "#040404",
+  light500: "rgb(210 210 210)",
   light300: "rgb(70 70 70)",
-  light400: "rgb(180 180 180)",
+  light400: "rgb(190 190 190)",
 };
 
 export const letterSpacing = {

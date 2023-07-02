@@ -10,6 +10,7 @@ import BottomSmoke from "../components/home/BottomSmoke";
 import BackgroundNoise from "../components/BackgroundNoise";
 import { theme } from "../styles/chakraUI/theme";
 import SmoothScroll from "../components/SmoothScroll";
+import Head from "next/head";
 
 export const RootFontSizeContext = React.createContext();
 export const PointerContext = React.createContext();
@@ -44,6 +45,7 @@ function MyApp({ Component, pageProps }) {
       htmlEl.style.overflow = "hidden";
       htmlEl.style.position = "fixed";
     }
+    if (!router.asPath === "skill") SmoothScroll();
 
     return () => {
       htmlEl.style.overflow = "auto";
@@ -51,12 +53,13 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router.asPath]);
 
-  SmoothScroll();
-
   return (
     <ChakraProvider theme={theme}>
       <PointerContext.Provider value={{ pointer, setPointer }}>
         <RootFontSizeContext.Provider value={rootFontSize}>
+          <Head>
+            <meta name="robots" content="noindex" />
+          </Head>
           <BackgroundNoise />
           <BottomSmoke />
           <Nav setIndex={setIndex} />

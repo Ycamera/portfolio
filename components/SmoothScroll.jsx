@@ -19,9 +19,9 @@ const SmoothScroll = () => {
     const lenis = new Lenis({
       duration: 1.2, // アニメーションの継続時間
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 特定の値の変化率を指定
-      direction: "vertical", // 方向
-      gestureDirection: "vertical",
-      smooth: true, // スムーススクロールの有効・無効を設定
+      orientation: "vertical", // 方向
+      gestureOrientation: "vertical",
+      smoothWheel: true, // スムーススクロールの有効・無効を設定
       smoothTouch: false, // タッチスクロール時のスムーススクロールの有効・無効を設定。(タッチデバイス本来の滑らかさを模倣することは不可能であるため、デフォルト無効)
       touchMultiplier: 2,
     });

@@ -11,7 +11,7 @@ const notSelectable = {
   userSelect: "none",
 };
 
-const Top = ({ show, touchDevice }) => {
+const Top = ({ touchDevice }) => {
   return (
     <LayoutTop>
       <MotionY y={100} disappearDelay={0.1}>
