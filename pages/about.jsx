@@ -26,11 +26,14 @@ const about = () => {
             <NameComponent />
             <EducationalBackground />
 
-            <Box w="60%" h="0.1rem" marginBlock="10rem" marginInline="auto" bg={color.light300} filter="blur(0.1rem)"></Box>
-
+            <Flex justifyContent="center" w="100%">
+              <Box w="60%" h="0.1rem" mt="10rem" mb="10rem" marginInline="auto" bg={color.light300} filter="blur(0.1rem)"></Box>
+            </Flex>
             <WorkExperience />
             <Box>
-              <Box w="60%" h="0.1rem" mt="10rem" mb="5rem" marginInline="auto" bg={color.light300} filter="blur(0.1rem)"></Box>
+              <Flex justifyContent="center" w="100%">
+                <Box w="60%" h="0.1rem" mt="10rem" mb="5rem" marginInline="auto" bg={color.light300} filter="blur(0.1rem)"></Box>
+              </Flex>
               <NextPageLink />
             </Box>
           </Container>

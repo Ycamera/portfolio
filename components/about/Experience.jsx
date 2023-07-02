@@ -86,9 +86,11 @@ const VerticalTextComponent = ({ children, text, flexDirection = "row" }) => {
           alignItems="center"
           flex="1"
           pos="relative"
-          paddingBlock={{ base: "4rem", sm: "8rem" }}
-          marginBlock="3rem"
+          pt={{ base: "4rem", sm: "8rem" }}
+          pb={{ base: "4rem", sm: "8rem" }}
           overflow="hidden"
+          mt="3rem"
+          mb="3rem"
           _before={{
             ...VerticalStyle,
             bg: `linear-gradient(to top, transparent 0%, ${color.primary} 100%)`,

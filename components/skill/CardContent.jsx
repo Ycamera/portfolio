@@ -141,14 +141,15 @@ const CrossIcon = ({ resetCardIndex }) => {
     h: "0.06rem",
     bg: color.light,
     pos: "absolute",
-    inset: "0",
-    margin: "auto",
+    left: "50%",
+    top: "50%",
+    transform: "translate(-50%,-50%)",
   };
   return (
     <Flex justifyContent="flex-end" pos="sticky" top="0" zIndex="10">
       <Box w={size} h={size} cursor="pointer" onClick={resetCardIndex} pos="relative" bg={color.deepdark} borderRadius="0.5rem">
-        <Box {...line} transform="rotate(45deg)" />
-        <Box {...line} transform="rotate(-45deg)" />
+        <Box {...line} transform="translate(-50%,-50%) rotate(45deg)" />
+        <Box {...line} transform="translate(-50%,-50%) rotate(-45deg)" />
       </Box>
     </Flex>
   );
@@ -169,23 +170,23 @@ const PageNavigator = ({ moveToOtherPage, hidePageNav }) => {
     borderRight: "solid 0.06rem",
     borderTop: "solid 0.06rem",
     pos: "absolute",
-    inset: 0,
-    margin: "auto",
-
+    left: "50%",
+    top: "50%",
+    transform: "translate(-50%,-50%)",
     borderColor: color.light,
   };
   return (
     <Flex justifyContent={"center"} gap="3rem" mt="3rem" pb="5rem">
       {hidePageNav !== "left" ? (
         <Box {...style} onClick={() => moveToOtherPage(-1)}>
-          <Box {...innerStyle} transform="translateX(0.3rem) rotate(-135deg)"></Box>
+          <Box {...innerStyle} transform="translate(calc(-50% + 0.3rem),-50%) rotate(-135deg)"></Box>
         </Box>
       ) : (
         <Box {...style} visibility="hidden" />
       )}
       {hidePageNav !== "right" ? (
         <Box {...style} onClick={() => moveToOtherPage(1)}>
-          <Box {...innerStyle} transform="translateX(-0.3rem) rotate(45deg)"></Box>
+          <Box {...innerStyle} transform="translate(calc(-50% + -0.3rem),-50%) rotate(45deg)"></Box>
         </Box>
       ) : (
         <Box {...style} visibility="hidden" />
