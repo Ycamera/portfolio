@@ -32,7 +32,7 @@ const SideNav = ({ elements, index }) => {
 
 export default function Home(props) {
   // const elements = [<Top />, <About />, <Skill />, <Contact />];
-  const elements = [<Top />, <About />, <Skill />];
+  const elements = [<Top key="1" />, <About key="2" />, <Skill key="3" />];
 
   const [show, setShow] = useState(false);
   const [control, setControl] = useState(false);
@@ -104,7 +104,6 @@ export default function Home(props) {
           <Motion
             initial={{ x: "0", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            // exit={{ x: "-50%", opacity: 0 }}
             transition={{ duration: 1, type: "spring", stiffness: 40, mass: 0.5, delay: 0.2 }}
           >
             <Box pointerEvents={"none"}>

@@ -11,6 +11,7 @@ import BackgroundNoise from "../components/BackgroundNoise";
 import { theme } from "../styles/chakraUI/theme";
 import SmoothScroll from "../components/SmoothScroll";
 import Head from "next/head";
+import favicon from "../public/images/icon.jpg";
 
 export const RootFontSizeContext = React.createContext();
 export const PointerContext = React.createContext();
@@ -59,6 +60,9 @@ function MyApp({ Component, pageProps }) {
         <RootFontSizeContext.Provider value={rootFontSize}>
           <Head>
             <meta name="robots" content="noindex" />
+            <link rel="apple-touch-icon" sizes="180x180" href={favicon.src} />
+            <link rel="icon" type="image/png" sizes="32x32" href={favicon.src} />
+            <link rel="icon" type="image/png" sizes="16x16" href={favicon.src} />
           </Head>
           <BackgroundNoise />
           <BottomSmoke />

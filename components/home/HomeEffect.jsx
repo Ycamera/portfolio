@@ -4,29 +4,30 @@ import Motion from "/components/Motion";
 import { setTextEffect } from "/lib/textEffect";
 import { color } from "/styles/variable";
 
-const Particle = () => {
-  const numberOfParticle = 6;
-  let particles = new Array(numberOfParticle).fill().map((_, i) => i);
+// const Particle = () => {
+//   const numberOfParticle = 6;
+//   let particles = new Array(numberOfParticle).fill().map((_, i) => i);
 
-  return (
-    <Motion animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 2 }}>
-      <Box pos="absolute" w="10%" h="10%">
-        {particles.map((particle) => {
-          return (
-            <Circle
-              pos="absolute"
-              inset="0"
-              margin="auto"
-              size="10%"
-              bg={color.darklight}
-              transform={`rotate(${(particle * 360) / numberOfParticle}deg) translateY(8rem)`}
-            />
-          );
-        })}
-      </Box>
-    </Motion>
-  );
-};
+//   return (
+//     <Motion animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 2 }}>
+//       <Box pos="absolute" w="10%" h="10%">
+//         {particles.map((particle) => {
+//           return (
+//             <Circle
+//               key={particle}
+//               pos="absolute"
+//               inset="0"
+//               margin="auto"
+//               size="10%"
+//               bg={color.darklight}
+//               transform={`rotate(${(particle * 360) / numberOfParticle}deg) translateY(8rem)`}
+//             />
+//           );
+//         })}
+//       </Box>
+//     </Motion>
+//   );
+// };
 
 const HomeEffect = ({ firstRendering, setFirstRendering, index, loaded }) => {
   const [text, setText] = useState("");

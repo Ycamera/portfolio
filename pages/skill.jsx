@@ -10,7 +10,7 @@ import HeadLineAppear from "../components/HeadLineAppear";
 
 const ease = [0.65, 0.28, 0.27, 1.03];
 
-const skill = () => {
+const Skill = () => {
   const headlineRef = useRef(null);
   const [headline, setHeadline] = useState("30rem");
   const [overflow, setOverflow] = useState(false);
@@ -51,4 +51,4 @@ const skill = () => {
   );
 };
 
-export default skill;
+export default Skill;

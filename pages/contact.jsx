@@ -44,7 +44,7 @@ const Form = ({ label, placeholder, textarea = false, register, errors, id, next
   );
 };
 
-const contact = () => {
+const Contact = () => {
   const [email, setEmail] = useState("");
 
   const {
@@ -162,4 +162,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;
