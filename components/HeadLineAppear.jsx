@@ -21,7 +21,7 @@ const HeadLineAppear = ({ text, style }) => {
   };
 
   return (
-    <Motion initial={{ scale: 1.35 }} animate={{ scale: 1 }} transition={{ delay: 1.7, duration: 1, ease: [0.65, 0.28, 0.27, 1.03] }}>
+    <Motion initial={{ scale: 1.5 }} animate={{ scale: 1 }} transition={{ delay: 1.7, duration: 1, ease: [0.65, 0.28, 0.27, 1.03] }}>
       <Heading
         as="h1"
         display="flex"
