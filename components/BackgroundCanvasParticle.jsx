@@ -19,12 +19,13 @@ const BackgroundCanvasParticle = ({ zIndex = -10 }) => {
     let spaceDistance = getSizeBasedOnInnerWidth(100);
     let lineRadius = getSizeBasedOnInnerWidth(15);
 
-    const addEventNames = ["pointermove"];
+    const addEventNames = ["pointermove", "mousemove", "touchmove"];
     addEventNames.forEach((eventName) => {
-      addEventListener(eventName, createParticle);
+      window.addEventListener(eventName, createParticle);
     });
-    addEventListener("touchmove", preventDefault);
-    addEventListener("touchstart", preventDefault);
+
+    window.addEventListener("touchmove", preventDefault);
+    window.addEventListener("touchstart", preventDefault);
 
     function preventDefault(e) {
       e.stopPropagation();
@@ -136,10 +137,10 @@ const BackgroundCanvasParticle = ({ zIndex = -10 }) => {
       clearInterval(animate);
       window.removeEventListener("resize", resize);
       addEventNames.forEach((eventName) => {
-        removeEventListener(eventName, createParticle);
+        window.removeEventListener(eventName, createParticle);
       });
-      removeEventListener("touchmove", preventDefault);
-      removeEventListener("touchstart", preventDefault);
+      window.removeEventListener("touchmove", preventDefault);
+      window.removeEventListener("touchstart", preventDefault);
     };
   }, []);
 
