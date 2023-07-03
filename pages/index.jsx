@@ -20,11 +20,20 @@ export const TransitionDirection = React.createContext();
 
 const SideNav = ({ elements, index }) => {
   return (
-    <Flex pos="absolute" right="0" top="50%" transform="translateY(-50%)" pointerEvents="none" flexDirection="column" alignItems="end">
+    <Flex
+      pos="absolute"
+      right="0"
+      top="50%"
+      transform="translateY(-50%)"
+      pointerEvents="none"
+      flexDirection="column"
+      alignItems="end"
+      userSelect="none"
+    >
       {elements.map((element, i) => {
         const style = { w: "2rem" };
 
-        return <Box key={element + i} bg={color.darklight} w="1.5rem" h="0.06rem" my="0.3rem" {...(i === index && style)} transition="0.3s" />;
+        return <Box key={element + i} bg={color.darklight} w="1.2rem" h="0.08rem" my="0.3rem" {...(i === index && style)} transition="0.3s" />;
       })}
     </Flex>
   );
