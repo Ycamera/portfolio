@@ -19,7 +19,7 @@ const BackgroundCanvasParticle = ({ zIndex = -10 }) => {
     let spaceDistance = getSizeBasedOnInnerWidth(100);
     let lineRadius = getSizeBasedOnInnerWidth(15);
 
-    const addEventNames = ["pointermove", "mousemove", "touchmove"];
+    const addEventNames = ["pointermove"];
     addEventNames.forEach((eventName) => {
       window.addEventListener(eventName, createParticle);
     });
@@ -144,7 +144,7 @@ const BackgroundCanvasParticle = ({ zIndex = -10 }) => {
     };
   }, []);
 
-  return <Box as="canvas" id="canvasBgParticle" zIndex={zIndex} pos="fixed" top="0" left="0" w="100%" h="100%" pointerEvents={"none"} />;
+  return <Box touch as="canvas" id="canvasBgParticle" zIndex={zIndex} pos="fixed" top="0" left="0" w="100%" h="100%" pointerEvents={"none"} />;
 };
 
 export default BackgroundCanvasParticle;

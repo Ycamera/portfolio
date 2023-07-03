@@ -99,7 +99,15 @@ export default function Home(props) {
       <TransitionEffect reverseEffect={true} firstRendering={props.firstRendering} />
       <BackgroundCanvasParticle />
       <Motion initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }}>
-        <Box onWheel={scroll} w="100%" h="100%" pos="fixed" top="0" onTouchStart={() => props.setTouchDevice(true)}>
+        <Box
+          onWheel={scroll}
+          w="100%"
+          h="100%"
+          pos="fixed"
+          top="0"
+          onTouchStart={() => props.setTouchDevice(true)}
+          style={{ "touch-action": "none" }}
+        >
           <Motion
             initial={{ x: "0", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}

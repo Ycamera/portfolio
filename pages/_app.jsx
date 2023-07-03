@@ -12,6 +12,7 @@ import { theme } from "../styles/chakraUI/theme";
 import SmoothScroll from "../components/SmoothScroll";
 import Head from "next/head";
 import favicon from "../public/images/icon.jpg";
+import BackgroundCanvasParticle from "../components/BackgroundCanvasParticle";
 
 export const RootFontSizeContext = React.createContext();
 export const PointerContext = React.createContext();
@@ -67,6 +68,7 @@ function MyApp({ Component, pageProps }) {
           <BackgroundNoise />
           <BottomSmoke />
           <Nav setIndex={setIndex} />
+
           <AnimatePresence exitBeforeEnter>
             <Component
               {...pageProps}
