@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext, useRef } from "react";
+import React, { useMemo, useState, useContext, useRef } from "react";
 import { Box, Flex, Grid, Image, keyframes } from "@chakra-ui/react";
 import Motion from "../Motion";
 import { PointerContext, RootFontSizeContext } from "../../pages/_app";
@@ -150,6 +150,12 @@ const SiteCard = ({ img, delay = 0, setCardIndex }) => {
     setTimeout(() => {
       setBgPos({ left: left, top: top, animation: true });
     }, 1);
+
+    setTimeout(() => {
+      setBgPos((prev) => {
+        return { ...prev, animation: false };
+      });
+    }, 1000);
   }
 
   return (
@@ -177,21 +183,7 @@ const SiteCard = ({ img, delay = 0, setCardIndex }) => {
           pos="absolute"
           w="0"
           h="0"
-          {...(bgPos.animation && { animation: `${waveAnimation} 1s none` })}
-          bg={color.light}
-          left={bgPos.left}
-          top={bgPos.top}
-          borderRadius="50%"
-          transform="translate(-50%,-50%)"
-          filter="blur(0.5rem)"
-        />
-        <Box
-          pointerEvents="none"
-          zIndex="-1"
-          pos="absolute"
-          w="0"
-          h="0"
-          {...(bgPos.animation && { animation: `${waveAnimation} 1s` })}
+          {...(bgPos.animation && { animation: `${waveAnimation} 1s forwards` })}
           bg={color.light}
           left={bgPos.left}
           top={bgPos.top}
