@@ -17,7 +17,7 @@ const neocosmo = {
   img: neocosmoImg,
   title: "一般社団法人ネオコスモ",
   technology: "HTML SCSS JavaScript PHP CMS:WordPress Animationライブラリ:GSAP",
-  text: "知人が立ち上げた障害福祉事業の企業サイト請負制作。 要件定義、デザイン制作、WordPressテーマ制作・実装、サーバー契約、ドメインの取得などウェブ制作に関わる全ての工程を担当しました。 トップページからお問い合わせページまでの導線をシンプルにすることで、事業のターゲットとなる「障害を抱えている方々」が事業内容を理解しやすいように工夫しました。",
+  text: "知人が立ち上げた障害福祉事業の企業サイトを請負制作しました。 要件定義、デザイン制作、WordPressテーマ制作・実装、サーバー契約、ドメインの取得などウェブ制作に関わる全ての工程を担当しました。 事業のターゲットとなる「障害を抱えている方々」がコンテンツを理解しやすいように、トップページからお問い合わせページまでの導線をシンプルに設計し、情報が伝わりやすいように工夫しました。",
   webLink: "https://neocosmo.jp/",
 };
 const todo = {
@@ -40,7 +40,7 @@ const movight = {
   img: movightImg,
   title: "Movight",
   technology: "HTML CSS JavaScript React",
-  text: "Reactの勉強を始めて1週間経ったときに制作。 上映中の映画から昔の映画作品まで探せるSPAサイトです。 JavaScriptの非同期処理で外部APIから映画情報を取得し表示しています。 APIから日本語で情報が取得できなかった場合は、英語の情報を取得して表示するようにしてます。",
+  text: "Reactの勉強を始めて1週間経ったときに制作しました。 上映中の映画から昔の映画作品まで探せるSPAサイトです。 JavaScriptの非同期処理で外部APIから映画情報を取得し表示しています。 APIから日本語で情報が取得できなかった場合は、英語の情報を取得して表示するようにしてます。",
   webLink: "https://ycamera.github.io/Movight/",
   githubLink: "https://github.com/Ycamera/Movight",
 };
