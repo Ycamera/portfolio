@@ -60,6 +60,7 @@ function MyApp({ Component, pageProps }) {
       <PointerContext.Provider value={{ pointer, setPointer }}>
         <RootFontSizeContext.Provider value={rootFontSize}>
           <Head>
+            <title>Ryosuke.K</title>
             <meta name="robots" content="noindex" />
             <link rel="apple-touch-icon" sizes="180x180" href={favicon.src} />
             <link rel="icon" type="image/png" sizes="32x32" href={favicon.src} />
