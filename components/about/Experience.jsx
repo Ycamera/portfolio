@@ -130,7 +130,7 @@ export const EducationalBackground = () => {
       <VerticalTextComponent text="UNIVERSITY" flexDirection="row" style={{ mt: "10rem" }}>
         <TextContainer
           title="名城大学外国語学部 国際英語学科 卒業"
-          subtitle={["2018 - 2022", "GPA:3.3 取得", "TOEIC;930点 取得"]}
+          subtitle={["2018 - 2022", "GPA:3.3 取得", "TOEIC:930点 取得"]}
           text="造園業を3年間勤めた後、新しいことを学びたい気持ちが大きくなり、22歳のときに独学で大学へ進学する。2年次に半年間のアメリカ留学を経験し、3年次以降は「他者の動機付け理論（モチベーション管理）」についての勉強に注力。"
           textAlign="right"
           mt="0"
