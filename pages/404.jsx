@@ -7,8 +7,19 @@ const ErrorPage = () => {
     <>
       <TransitionEffect />
 
-      <Flex w="100%" h="100vh" bg="#000" justifyContent={"center"} alignItems="center">
-        <Heading as="h1" zIndex="1">
+      <Flex
+        w="100%"
+        h="100%"
+        top="0"
+        left="0"
+        pos="fixed"
+        bg="#000"
+        justifyContent={"center"}
+        alignItems="center"
+        overflow="hidden"
+        style={{ touchAction: "none" }}
+      >
+        <Heading as="h1" zIndex="1" userSelect="none" pointerEvents="none">
           404 page not found
         </Heading>
         <BackgroundCanvasParticle zIndex="0" />
