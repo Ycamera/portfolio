@@ -141,13 +141,13 @@ const Nav = (props) => {
                 bg: color.primary,
               }}
             >
-              <Text as="span" color={color.light} fontSize="0.8rem" transition="0.5s" zIndex={"1"}>
+              <Text as="span" color={color.light} fontSize="0.8rem" transition="0.5s" zIndex={"1"} lineHeight="0.8rem">
                 {!menuShow ? text.MENU : text.CLOSE}
               </Text>
 
               <Box
                 pos="absolute"
-                transform="translateY(-2.5rem)"
+                transform="translateY(-2rem)"
                 inset="0"
                 margin="auto"
                 bg={color.light}
