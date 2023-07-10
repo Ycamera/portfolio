@@ -1,4 +1,4 @@
-import Motion, { MotionY } from "/components/Motion";
+import { MotionY } from "/components/Motion";
 import { Text, Flex, Box } from "@chakra-ui/react";
 import { color } from "/styles/variable";
 import NextLink from "next/link";

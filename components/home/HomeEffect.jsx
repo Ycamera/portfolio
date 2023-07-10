@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Flex, Text, Circle, ColorModeScript } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import Motion from "/components/Motion";
 import { setTextEffect } from "/lib/textEffect";
 import { color } from "/styles/variable";

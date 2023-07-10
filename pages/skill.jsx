@@ -1,12 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
-import TransitionEffect from "../components/TransitionEffect";
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
-import Layout from "../components/Layout";
-import Container from "../components/Container";
+import TransitionEffect from "../components/background/TransitionEffect";
+import { Box, Flex } from "@chakra-ui/react";
+import Layout from "../components/layout/Layout";
+import Container from "../components/layout/Container";
 import SiteCards from "../components/skill/SiteCards";
-import { letterSpacing } from "../styles/variable.mjs";
-import MousePointer from "../components/MousePointer";
-import HeadLineAppear from "../components/HeadLineAppear";
+import HeadLineAppear from "../components/animation/HeadLineAppear";
 
 const ease = [0.65, 0.28, 0.27, 1.03];
 
@@ -37,7 +35,16 @@ const Skill = () => {
   return (
     <>
       <TransitionEffect />
-      <Box pos="relative" top="0" left="0" zIndex="15" w="100%" h="100vh" overflow={overflow ? "auto" : "hidden"}>
+      <Box
+        pos="relative"
+        top="0"
+        left="0"
+        zIndex="15"
+        w="100%"
+        h="100dvh"
+        overflow={overflow ? "auto" : "hidden"}
+        style={{ touchAction: overflow ? "auto" : "none" }}
+      >
         <Layout>
           <Container>
             <Flex justifyContent="center" mt={headline} ref={headlineRef} transition="margin-top 1.6s" transitionTimingFunction={ease}>

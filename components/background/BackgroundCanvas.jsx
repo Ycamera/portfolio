@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Box } from "@chakra-ui/react";
-import BottomSmoke from "./home/BottomSmoke";
+import BottomSmoke from "../home/BottomSmoke";
 
 const BackgroundCanvas = ({ children }) => {
   useEffect(() => {

@@ -1,5 +1,4 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
 import Motion from "../Motion";
 
 const ScrollAnimateElement = ({ children, customVariants = { offScreen: {}, onScreen: {} } }) => {

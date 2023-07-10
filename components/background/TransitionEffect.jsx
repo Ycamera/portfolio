@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Box, Flex } from "@chakra-ui/react";
-import Motion from "./Motion";
+import Motion from "../Motion";
 
 const Mirror = ({ w, i, reverseDelay, delay, reverse, duration, firstRendering }) => {
   return (

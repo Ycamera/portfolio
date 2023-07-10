@@ -1,8 +1,6 @@
 import React from "react";
 import { keyframes, Box, Flex, Heading, Text } from "@chakra-ui/react";
-import Motion from "../Motion";
 import { color, letterSpacing } from "/styles/variable.mjs";
-import Layout from "../Layout";
 import { TextSM } from "../Texts";
 import { lineHeight } from "../../styles/variable.mjs";
 import ScrollAnimateElement from "../animation/ScrollAnimateElement";

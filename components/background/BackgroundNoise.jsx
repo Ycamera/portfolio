@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-import { Flex, Box, keyframes } from "@chakra-ui/react";
-import noisePng from "../public/images/noise.png";
-import { RootFontSizeContext } from "../pages/_app";
+import { Flex, keyframes } from "@chakra-ui/react";
+import noisePng from "../../public/images/noise.png";
+import { RootFontSizeContext } from "../../pages/_app";
+
 const BackgroundNoise = () => {
   const rootFontSize = useContext(RootFontSizeContext);
-  const backgroundSize = rootFontSize * 15;
+  const backgroundSize = rootFontSize * 6;
 
   const noiseAnimate = keyframes`
   0% {
@@ -55,7 +56,7 @@ const BackgroundNoise = () => {
       alignItems="center"
       bg={`url(${noisePng.src}) repeat`}
       animation={`${noiseAnimate}  linear infinite 0.3s`}
-      backgroundSize
+      backgroundSize={backgroundSize}
       pointerEvents="none"
       userSelect="none"
       opacity="0.8"

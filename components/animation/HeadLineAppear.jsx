@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
-import Motion from "./Motion";
+import React from "react";
+import Motion from "../Motion";
 import { Flex, Box, Heading } from "@chakra-ui/react";
-import { color, letterSpacing } from "../styles/variable.mjs";
+import { color, letterSpacing } from "../../styles/variable.mjs";
 
 const ease = [0.65, 0.28, 0.27, 1.03];
 

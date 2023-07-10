@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Heading, Box, Flex, Text, Textarea, FormControl, FormLabel, Input, Button } from "@chakra-ui/react";
+import { Box, Flex, Text, Textarea, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import Motion from "/components/Motion.jsx";
 import { useForm } from "react-hook-form";
 import TransitionEffect from "/components/TransitionEffect";

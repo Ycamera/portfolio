@@ -4,7 +4,6 @@ import { color, letterSpacing, lineHeight } from "../../styles/variable.mjs";
 import githubIcon from "../../public/images/github.png";
 import weblinkIcon from "../../public/images/weblink.png";
 import Motion from "../Motion.jsx";
-import Parallax from "../Parallax.jsx";
 
 const textFormatNormal = {
   letterSpacing: letterSpacing.sm,
@@ -37,7 +36,7 @@ const CardContent = ({ info, resetCardIndex, moveToOtherPage, hidePageNav }) => 
   }
   return (
     <Motion initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
-      <Box pos="fixed" top="0" left="0" w="100%" h="100vh" bg={"rgba(0,0,0,0.5)"} zIndex="100" pointerEvents="all">
+      <Box pos="fixed" top="0" left="0" w="100%" h="100vh" bg={"rgba(0,0,0,0.5)"} zIndex="100" pointerEvents="all" style={{ touchAction: "auto" }}>
         <Box pos="absolute" w="100%" h="100%" top="0" left="0" onClick={resetCardIndex} />
         <Motion
           initial={{ clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)" }}

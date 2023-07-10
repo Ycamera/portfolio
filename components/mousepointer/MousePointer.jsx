@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Box, Flex } from "@chakra-ui/react";
-import Motion from "./Motion";
-import { PointerContext, RootFontSizeContext } from "../pages/_app";
-import { color } from "../styles/variable.mjs";
+import Motion from "../Motion";
+import { PointerContext } from "../../pages/_app";
+import { color } from "../../styles/variable.mjs";
 import { useRouter } from "next/router";
 
 const MousePointer = () => {

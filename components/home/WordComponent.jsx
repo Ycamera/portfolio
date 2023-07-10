@@ -1,5 +1,5 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
-import Motion, { MotionY } from "/components/Motion";
+import { Heading } from "@chakra-ui/react";
+import { MotionY } from "/components/Motion";
 
 import LayoutTop from "./LayoutTop";
 import LearnMoreButton from "./LearnMoreButton";

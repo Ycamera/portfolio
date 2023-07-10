@@ -3,18 +3,17 @@ import Top from "/components/home/Top";
 import About from "/components/home/About";
 import Skill from "/components/home/Skill";
 // import Contact from "/components/home/Contact";
-import BackgroundCanvasParticle from "../components/BackgroundCanvasParticle";
+import BackgroundCanvasParticle from "../components/background/BackgroundCanvasParticle";
 import HomeEffect from "/components/home/HomeEffect";
-import TransitionEffect from "../components/TransitionEffect";
+import TransitionEffect from "../components/background/TransitionEffect";
 
 import Motion from "/components/Motion";
 import { Box, Flex } from "@chakra-ui/react";
 import { Slot } from "@radix-ui/react-slot";
 import { AnimatePresence } from "framer-motion";
 import { color } from "/styles/variable";
-import BottomSmoke from "../components/home/BottomSmoke";
 
-import ScrollComponentForTouchDeviceBySlide from "../components/home/ScrollComponentForTouchDeviceBySlide";
+import ScrollComponentForTouchDeviceBySlide from "../components/scroll/ScrollComponentForTouchDeviceBySlide";
 
 export const TransitionDirection = React.createContext();
 

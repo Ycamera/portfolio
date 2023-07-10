@@ -1,9 +1,7 @@
-import React, { useMemo, useState, useContext, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Box, Flex, Grid, Image, keyframes } from "@chakra-ui/react";
 import Motion from "../Motion";
-import { PointerContext, RootFontSizeContext } from "../../pages/_app";
 import { color } from "../../styles/variable.mjs";
-import MousePointerArea from "../MousePointerArea";
 import neocosmoImg from "../../public/images/neocosmo.jpg";
 import todoImg from "../../public/images/Todo.jpg";
 import mowingImg from "../../public/images/mowing.jpg";
@@ -11,13 +9,13 @@ import movightImg from "../../public/images/movight.jpg";
 import minesweeperImg from "../../public/images/minesweeper.jpg";
 import CardContent from "./CardContent";
 import { AnimatePresence } from "framer-motion";
-import Parallax from "../Parallax";
+import Parallax from "../animation/Parallax";
 
 const neocosmo = {
   img: neocosmoImg,
   title: "一般社団法人ネオコスモ",
   technology: "HTML SCSS JavaScript PHP CMS:WordPress Animationライブラリ:GSAP",
-  text: "知人が立ち上げた障害福祉事業の企業サイトを請負制作しました。 要件定義、デザイン制作、WordPressテーマ制作・実装、サーバー契約、ドメインの取得などウェブ制作に関わる全ての工程を担当。 事業のターゲットとなる「障害を抱えている方々」がコンテンツを理解しやすいように、トップページからお問い合わせページまでの導線をシンプルに設計し、情報が伝わりやすいように工夫しました。  今後の保守・運用を意識して、CSS命名規則は「FLOCSS」を活用しています",
+  text: "知人が立ち上げた障害福祉事業の企業サイトを請負制作しました。 要件定義、デザイン制作、WordPressテーマ制作・実装、サーバー契約、ドメインの取得などウェブ制作に関わる全ての工程を担当。 事業のターゲットとなる「障害を抱えている方々」がコンテンツを理解しやすいように、トップページからお問い合わせページまでの導線をシンプルに設計し、情報が伝わりやすいように工夫しました。  今後の保守・運用を意識して、CSS命名規則は「FLOCSS」を活用しています。",
   webLink: "https://neocosmo.jp/",
 };
 const todo = {
@@ -40,7 +38,7 @@ const movight = {
   img: movightImg,
   title: "Movight",
   technology: "HTML CSS JavaScript React",
-  text: "Reactの勉強を始めて1週間経ったときに制作しました。 上映中の映画から昔の映画作品まで探せるSPAサイトです。 JavaScriptの非同期処理で外部APIから映画情報を取得し表示しています。 APIから日本語で情報が取得できなかった場合は、英語の情報を取得して表示するようにしてます。",
+  text: "非同期処理の勉強を兼ねてReactを勉強し始めてから1週間経ったときに制作しました。 上映中の映画から昔の映画作品まで探せるSPAサイトです。 JavaScriptの非同期処理で外部APIから映画情報を取得し表示しています。 APIに日本語の情報が存在しない場合は、英語の情報を取得して表示するようにしてます。",
   webLink: "https://ycamera.github.io/Movight/",
   githubLink: "https://github.com/Ycamera/Movight",
 };

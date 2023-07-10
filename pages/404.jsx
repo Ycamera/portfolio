@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex, Box, Heading } from "@chakra-ui/react";
-import BackgroundCanvasParticle from "../components/BackgroundCanvasParticle";
-import TransitionEffect from "../components/TransitionEffect";
+import BackgroundCanvasParticle from "../components/background/BackgroundCanvasParticle";
+import TransitionEffect from "../components/background/TransitionEffect";
 const ErrorPage = () => {
   return (
     <>

@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-import BackgroundCanvas from "/components/BackgroundCanvas";
 import Nav from "/components/Nav";
 import { ChakraProvider } from "@chakra-ui/react";
 import React, { useState, useEffect, useContext } from "react";
@@ -7,12 +6,11 @@ import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import { getRootFontSize } from "../js/getRootFontSize.mjs";
 import BottomSmoke from "../components/home/BottomSmoke";
-import BackgroundNoise from "../components/BackgroundNoise";
+import BackgroundNoise from "../components/background/BackgroundNoise";
 import { theme } from "../styles/chakraUI/theme";
-import SmoothScroll from "../components/SmoothScroll";
+import SmoothScroll from "../components/scroll/SmoothScroll";
 import Head from "next/head";
 import favicon from "../public/images/icon.jpg";
-import BackgroundCanvasParticle from "../components/BackgroundCanvasParticle";
 
 export const RootFontSizeContext = React.createContext();
 export const PointerContext = React.createContext();
