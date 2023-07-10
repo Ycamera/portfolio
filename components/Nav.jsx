@@ -119,7 +119,7 @@ const Nav = (props) => {
   ];
 
   return (
-    <Box pos="fixed" w="100%" h="100%" zIndex={200} className="nav" pointerEvents={"none"} top="0" left="0">
+    <Box pos="fixed" w="100%" h="100%" zIndex={50} className="nav" pointerEvents={"none"} top="0" left="0">
       <Flex justifyContent={"center"} w="100%" zIndex="5">
         <Flex flexDirection="column" alignItems="center" justifyContent={"center"} pointerEvents={"auto"}>
           <Motion initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
@@ -147,14 +147,13 @@ const Nav = (props) => {
 
               <Box
                 pos="absolute"
-                transform="translate(-50%,-2.5rem)"
-                left="50%"
-                top="0"
+                transform="translateY(-2.5rem)"
+                inset="0"
+                margin="auto"
                 bg={color.light}
                 w="0.06rem"
                 height="1.875rem"
                 className="menu-line"
-                transition="0.3s"
               />
             </Flex>
           </Motion>
