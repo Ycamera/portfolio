@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, Flex, Text, Textarea, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import Motion from "/components/Motion.jsx";
 import { useForm } from "react-hook-form";
-import TransitionEffect from "/components/TransitionEffect";
+import TransitionEffect from "../components/background/TransitionEffect";
 
 const textStyle = {
   fontSize: "1.2rem",
