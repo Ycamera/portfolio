@@ -22,7 +22,7 @@ const ScrollComponent = ({ touchDevice = false, delay = 0 }) => {
         <Box pos="absolute" bottom="10%">
           <AnimatePresence>
             {show && (
-              <Motion initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, y: "-1rem" }} transition={{ duration: 1 }}>
+              <Motion initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, y: "-1rem" }} transition={{ duration: 0.5 }}>
                 <Box>
                   <Text as="span" color={color.light} fontSize="0.8rem" zIndex={"1"}>
                     SCROLL
