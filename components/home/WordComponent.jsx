@@ -1,11 +1,11 @@
 import { Heading } from "@chakra-ui/react";
 import { MotionY } from "/components/Motion";
-
+import { memo } from "react";
 import LayoutTop from "./LayoutTop";
 import LearnMoreButton from "./LearnMoreButton";
 import WordAppearEffect from "./WordAppearEffect";
 
-const WordComponent = ({ text, link, buttonText = false }) => {
+const WordComponent = memo(({ text, link, buttonText = false }) => {
   return (
     <LayoutTop>
       <MotionY y={100} disappearDelay={0.1}>
@@ -16,6 +16,6 @@ const WordComponent = ({ text, link, buttonText = false }) => {
       <LearnMoreButton link={link} {...(buttonText && { text: buttonText })} />
     </LayoutTop>
   );
-};
+});
 
 export default WordComponent;

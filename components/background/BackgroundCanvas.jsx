@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { Box } from "@chakra-ui/react";
 import BottomSmoke from "../home/BottomSmoke";
 
-const BackgroundCanvas = ({ children }) => {
+const BackgroundCanvas = memo(({ children }) => {
   useEffect(() => {
     const canvas = document.getElementById("canvasBg");
     let ctx = canvas.getContext("2d");
@@ -57,13 +57,15 @@ const BackgroundCanvas = ({ children }) => {
     window.addEventListener("resize", resize);
     init();
 
-    const animate = setInterval(() => {
-      if (ctx) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        draw();
-      } else {
-      }
-    }, 1000 / 30);
+    const animate = useCallback(
+      setInterval(() => {
+        if (ctx) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          draw();
+        } else {
+        }
+      }, 1000 / 30)
+    );
 
     return () => {
       ctx = null;
@@ -79,6 +81,6 @@ const BackgroundCanvas = ({ children }) => {
       {children}
     </Box>
   );
-};
+});
 
 export default BackgroundCanvas;

@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, memo } from "react";
 import { Box } from "@chakra-ui/react";
 
-const BackgroundCanvasParticle = ({ zIndex = -10 }) => {
+const BackgroundCanvasParticle = memo(({ zIndex = -10 }) => {
   useEffect(() => {
     const canvas = document.getElementById("canvasBgParticle");
     let ctx = canvas.getContext("2d");
@@ -145,6 +145,6 @@ const BackgroundCanvasParticle = ({ zIndex = -10 }) => {
   }, []);
 
   return <Box as="canvas" id="canvasBgParticle" zIndex={zIndex} pos="fixed" top="0" left="0" w="100%" h="100%" pointerEvents={"none"} />;
-};
+});
 
 export default BackgroundCanvasParticle;

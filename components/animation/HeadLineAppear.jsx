@@ -1,11 +1,11 @@
-import React from "react";
+import React, { memo } from "react";
 import Motion from "../Motion";
 import { Flex, Box, Heading } from "@chakra-ui/react";
 import { color, letterSpacing } from "../../styles/variable.mjs";
 
 const ease = [0.65, 0.28, 0.27, 1.03];
 
-const HeadLineAppear = ({ text, style }) => {
+const HeadLineAppear = memo(({ text, style }) => {
   const variantsForLetter = {
     initial: {
       y: "10rem",
@@ -53,6 +53,6 @@ const HeadLineAppear = ({ text, style }) => {
       </Heading>
     </Motion>
   );
-};
+});
 
 export default HeadLineAppear;

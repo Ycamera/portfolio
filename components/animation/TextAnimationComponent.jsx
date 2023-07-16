@@ -1,10 +1,11 @@
 import Motion from "../Motion";
 import { Box, Text } from "@chakra-ui/react";
 import { color, letterSpacing } from "/styles/variable.mjs";
+import { memo } from "react";
 
 const ease = [0.65, 0.28, 0.27, 1.03];
 
-const TextAnimationComponent = ({ text, style, delay }) => {
+const TextAnimationComponent = memo(({ text, style, delay }) => {
   const variantsForText = {
     initial: {
       y: "5rem",
@@ -38,6 +39,6 @@ const TextAnimationComponent = ({ text, style, delay }) => {
       </Text>
     </Box>
   );
-};
+});
 
 export default TextAnimationComponent;

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, memo } from "react";
 import { Box, Flex, Grid, Image, keyframes } from "@chakra-ui/react";
 import Motion from "../Motion";
 import { color } from "../../styles/variable.mjs";
@@ -51,7 +51,7 @@ const minesweeper = {
   githubLink: "https://github.com/Ycamera/minesweeper_project",
 };
 
-const SiteCards = ({ setOverflow }) => {
+const SiteCards = memo(({ setOverflow }) => {
   const [cardIndex, setCardIndex] = useState(-1);
 
   const cardInfo = [neocosmo, todo, mowing, movight, minesweeper];
@@ -90,10 +90,10 @@ const SiteCards = ({ setOverflow }) => {
         );
       })}
 
-      {cardIndex >= 0 && (
-        <AnimatePresence>
+      <AnimatePresence>
+        {cardIndex >= 0 && (
           <CardContent
-            key={cardInfo[cardIndex].img.src}
+            key={"theSame"}
             info={cardInfo[cardIndex]}
             resetCardIndex={() => {
               setCardIndexByNum(-1);
@@ -102,13 +102,13 @@ const SiteCards = ({ setOverflow }) => {
             moveToOtherPage={moveToOtherPage}
             hidePageNav={hidePageNav}
           />
-        </AnimatePresence>
-      )}
+        )}
+      </AnimatePresence>
     </Grid>
   );
-};
+});
 
-const SiteCard = ({ img, delay = 0, setCardIndex }) => {
+const SiteCard = memo(({ img, delay = 0, setCardIndex }) => {
   const [bgPos, setBgPos] = useState({ left: 0, top: 0, animation: false });
 
   const imgRef = useRef(null);
@@ -198,6 +198,6 @@ const SiteCard = ({ img, delay = 0, setCardIndex }) => {
       </Flex>
     </Motion>
   );
-};
+});
 
 export default SiteCards;

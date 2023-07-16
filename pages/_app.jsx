@@ -8,7 +8,6 @@ import { getRootFontSize } from "../js/getRootFontSize.mjs";
 import BottomSmoke from "../components/home/BottomSmoke";
 import BackgroundNoise from "../components/background/BackgroundNoise";
 import { theme } from "../styles/chakraUI/theme";
-import SmoothScroll from "../components/scroll/SmoothScroll";
 import Head from "next/head";
 import favicon from "../public/images/icon.jpg";
 
@@ -45,7 +44,6 @@ function MyApp({ Component, pageProps }) {
       htmlEl.style.overflow = "hidden";
       htmlEl.style.position = "fixed";
     }
-    if (!router.asPath === "skill") SmoothScroll();
 
     return () => {
       htmlEl.style.overflow = "auto";

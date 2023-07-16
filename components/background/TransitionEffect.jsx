@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import { Box, Flex } from "@chakra-ui/react";
 import Motion from "../Motion";
 
-const Mirror = ({ w, i, reverseDelay, delay, reverse, duration, firstRendering }) => {
+const Mirror = memo(({ w, i, reverseDelay, delay, reverse, duration, firstRendering }) => {
   return (
     <Box w={`${w}%`} h="100vh" pos="relative">
       <Motion
@@ -16,9 +16,9 @@ const Mirror = ({ w, i, reverseDelay, delay, reverse, duration, firstRendering }
       </Motion>
     </Box>
   );
-};
+});
 
-const TransitionEffect = ({ reverseEffect = false, firstRendering = true }) => {
+const TransitionEffect = memo(({ reverseEffect = false, firstRendering = true }) => {
   const numberOfLine = 20;
   const delayFrequency = 0.035;
   const duration = 0.6;
@@ -56,6 +56,6 @@ const TransitionEffect = ({ reverseEffect = false, firstRendering = true }) => {
       })}
     </Flex>
   );
-};
+});
 
 export default TransitionEffect;

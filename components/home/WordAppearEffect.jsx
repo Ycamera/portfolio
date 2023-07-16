@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import { Flex, Text } from "@chakra-ui/react";
 import { MotionY } from "../Motion";
 
-const WordMotion = ({ word, i }) => {
+const WordMotion = memo(({ word, i }) => {
   const customTransition = {
     mass: 1,
     stiffness: 30,
@@ -17,9 +17,9 @@ const WordMotion = ({ word, i }) => {
       </pre>
     </MotionY>
   );
-};
+});
 
-const WordAppearEffect = ({ text }) => {
+const WordAppearEffect = memo(({ text }) => {
   return (
     <Flex>
       {text.split("").map((word, i) => (
@@ -27,5 +27,5 @@ const WordAppearEffect = ({ text }) => {
       ))}
     </Flex>
   );
-};
+});
 export default WordAppearEffect;

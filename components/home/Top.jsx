@@ -1,14 +1,15 @@
 import { Box, Heading } from "@chakra-ui/react";
 import LayoutTop from "./LayoutTop";
-import { MotionY } from "/components/Motion";
+import Motion, { MotionY } from "/components/Motion";
 import ScrollComponent from "../scroll/ScrollComponent";
+import { memo } from "react";
 
 const notSelectable = {
   pointerEvents: "none",
   userSelect: "none",
 };
 
-const Top = ({ touchDevice }) => {
+const Top = memo(({ touchDevice }) => {
   return (
     <LayoutTop>
       <MotionY y={100} disappearDelay={0.1}>
@@ -22,9 +23,13 @@ const Top = ({ touchDevice }) => {
           K
         </Box>
       </MotionY>
-      <ScrollComponent touchDevice={touchDevice} />
+      <Motion initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+        <Box pos="absolute" bottom="10%" left="50%" transform="translateX(-50%)">
+          <ScrollComponent touchDevice={touchDevice} />
+        </Box>
+      </Motion>
     </LayoutTop>
   );
-};
+});
 
 export default Top;

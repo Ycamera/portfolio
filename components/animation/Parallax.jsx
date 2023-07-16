@@ -1,9 +1,9 @@
-import React, { useRef, useState, useEffect, useContext } from "react";
+import React, { useRef, useState, useEffect, useContext, memo } from "react";
 import { Box } from "@chakra-ui/react";
 import Motion from "../Motion";
 import { RootFontSizeContext } from "../../pages/_app";
 
-const Parallax = ({ children, rotateDegree = 5, translate = 0.5 }) => {
+const Parallax = memo(({ children, rotateDegree = 5, translate = 0.5 }) => {
   const rootFontSize = useContext(RootFontSizeContext) / 2;
 
   const containerRef = useRef(null);
@@ -59,6 +59,6 @@ const Parallax = ({ children, rotateDegree = 5, translate = 0.5 }) => {
       </Motion>
     </Box>
   );
-};
+});
 
 export default Parallax;

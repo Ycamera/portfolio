@@ -2,7 +2,9 @@ import { MotionY } from "/components/Motion";
 import { Text, Flex, Box } from "@chakra-ui/react";
 import { color } from "/styles/variable";
 import NextLink from "next/link";
-const LearnMoreButton = ({ link, text = "Learn More" }) => {
+import { memo } from "react";
+
+const LearnMoreButton = memo(({ link, text = "Learn More" }) => {
   return (
     <NextLink href={link}>
       <a style={{ marginTop: "2rem", pointerEvents: "auto" }}>
@@ -29,6 +31,6 @@ const LearnMoreButton = ({ link, text = "Learn More" }) => {
       </a>
     </NextLink>
   );
-};
+});
 
 export default LearnMoreButton;

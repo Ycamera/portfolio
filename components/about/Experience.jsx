@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { keyframes, Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { color, letterSpacing } from "/styles/variable.mjs";
 import { TextSM } from "../Texts";
@@ -42,7 +42,7 @@ const VerticalStyle = {
   h: "40%",
   left: 0,
 };
-const VerticalTextComponent = ({ children, text, flexDirection = "row" }) => {
+const VerticalTextComponent = memo(({ children, text, flexDirection = "row" }) => {
   flexDirection = flexDirection === "row" ? flexDirection : "row-reverse";
 
   const repeat = 3;
@@ -120,7 +120,7 @@ const VerticalTextComponent = ({ children, text, flexDirection = "row" }) => {
       {children}
     </Flex>
   );
-};
+});
 
 export const EducationalBackground = () => {
   return (
@@ -146,7 +146,7 @@ export const EducationalBackground = () => {
   );
 };
 
-const ExperienceComponent = ({ title, text, children, style }) => {
+const ExperienceComponent = memo(({ title, text, children, style }) => {
   const customVariants = {
     offScreen: { scale: 1.5, y: "5rem" },
     onScreen: { scale: 1, y: "0rem" },
@@ -160,6 +160,7 @@ const ExperienceComponent = ({ title, text, children, style }) => {
             <Heading as="h2" fontFamily="Klee one" fontWeight="bold" fontSize={fontSizeForHeadlineLg} textAlign="center">
               {title}
             </Heading>
+
             <TextSM style={{ textAlign: "center" }}>{text}</TextSM>
           </Box>
         </ScrollAnimateElement>
@@ -167,9 +168,9 @@ const ExperienceComponent = ({ title, text, children, style }) => {
       </Flex>
     </>
   );
-};
+});
 
-const TextContainer = ({ subHeadLine = "", title, subtitle, text, textAlign = "left", mt = "10rem", w = "lg" }) => {
+const TextContainer = memo(({ subHeadLine = "", title, subtitle, text, textAlign = "left", mt = "10rem", w = "lg" }) => {
   textAlign = textAlign === "left" ? textAlign : "right";
 
   const width = { md: "min(100%,28rem)", lg: "min(100%,36rem)" };
@@ -257,4 +258,4 @@ const TextContainer = ({ subHeadLine = "", title, subtitle, text, textAlign = "l
       </ScrollAnimateElement>
     </Box>
   );
-};
+});

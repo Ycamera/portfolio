@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 
 import { Flex, Box, Text } from "@chakra-ui/react";
 import Motion from "./Motion";
@@ -24,7 +24,7 @@ const Square = ({ delay }) => {
   );
 };
 
-const NavLink = ({ text, link, i, links, closeMenu, setIndex }) => {
+const NavLink = memo(({ text, link, i, links, closeMenu, setIndex }) => {
   const linkPath = link !== "/" ? "/" + link : link;
   const current = useRouter()?.asPath === linkPath;
 
@@ -85,7 +85,7 @@ const NavLink = ({ text, link, i, links, closeMenu, setIndex }) => {
       </NextLink>
     </Flex>
   );
-};
+});
 
 const Nav = (props) => {
   const [menuShow, setMenuShow] = useState(false);

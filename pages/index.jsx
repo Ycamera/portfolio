@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, memo, useEffect } from "react";
 import Top from "/components/home/Top";
 import About from "/components/home/About";
 import Skill from "/components/home/Skill";
@@ -17,7 +17,7 @@ import ScrollComponentForTouchDeviceBySlide from "../components/scroll/ScrollCom
 
 export const TransitionDirection = React.createContext();
 
-const SideNav = ({ elements, index }) => {
+const SideNav = memo(({ elements, index }) => {
   return (
     <Flex
       pos="absolute"
@@ -36,11 +36,11 @@ const SideNav = ({ elements, index }) => {
       })}
     </Flex>
   );
-};
+});
 
-export default function Home(props) {
+const Home = memo((props) => {
   // const elements = [<Top />, <About />, <Skill />, <Contact />];
-  const elements = [<Top key="1" />, <About key="2" />, <Skill key="3" />];
+  const elements = [<Top key="1" touchDevice={props.touchDevice} />, <About key="2" />, <Skill key="3" />];
 
   const [show, setShow] = useState(false);
   const [control, setControl] = useState(false);
@@ -115,15 +115,19 @@ export default function Home(props) {
           >
             <Box pointerEvents={"none"}>
               <AnimatePresence exitBeforeEnter>
-                {elements.map((element, index) => {
+                {/* {elements.map((element, index) => {
                   return (
                     props.index === index &&
                     show && (
-                      <Slot show={props.index === index} key={index} touchDevice={props.touchDevice}>
+                      // <Slot show={props.index === index} key={index} touchDevice={props.touchDevice}>
+                      
                         {element}
-                      </Slot>
+                      // </Slot>
                     )
                   );
+                })} */}
+                {elements.filter((element, index) => {
+                  return props.index === index && show;
                 })}
               </AnimatePresence>
             </Box>
@@ -135,4 +139,6 @@ export default function Home(props) {
       </Motion>
     </TransitionDirection.Provider>
   );
-}
+});
+
+export default Home;

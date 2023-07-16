@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import Motion from "../Motion";
 
-const ScrollAnimateElement = ({ children, customVariants = { offScreen: {}, onScreen: {} } }) => {
+const ScrollAnimateElement = memo(({ children, customVariants = { offScreen: {}, onScreen: {} } }) => {
   const defaultVariants = {
     offScreen: { opacity: 0 },
     onScreen: { opacity: 1 },
@@ -25,6 +25,6 @@ const ScrollAnimateElement = ({ children, customVariants = { offScreen: {}, onSc
       {children}
     </Motion>
   );
-};
+});
 
 export default ScrollAnimateElement;

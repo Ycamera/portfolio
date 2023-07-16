@@ -9,6 +9,7 @@ import MousePointer from "../components/mousepointer/MousePointer";
 import { color, letterSpacing } from "../styles/variable.mjs";
 import NextLink from "next/link";
 import Motion from "../components/Motion";
+import SmoothScroll from "../components/scroll/SmoothScroll";
 
 const about = () => {
   return (
