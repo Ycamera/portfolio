@@ -22,7 +22,7 @@ const todo = {
   img: todoImg,
   title: "Todo App",
   technology: "Next.js Chakra-ui TypeScript",
-  text: "TypeScriptとChakra-uiの勉強を兼ねて制作したタスク管理アプリです。 直感的に操作が行えるようにUIデザインにこだわりました。 追加したタスクは、ブラウザ上のlocalStorageに保存し管理しています。ブラウザを開いた際に、localStorage内にタスクが存在する場合は、最初に読み込む仕様になっています。  機能 ・タスクの追加、削除、修正、入れ替え ・テーマの切り替え「ダーク・ライトモード」",
+  text: "TypeScriptとChakra-uiの勉強を兼ねて制作したタスク管理アプリです。 直感的に操作が行えるようにUIデザインにこだわりました。 追加したタスクは、ブラウザ上のlocalStorageに保存し管理しています。ブラウザを開いた際に、localStorage内にタスクが存在する場合は、最初に読み込む仕様になっています。  機能 ・タスクの追加、読み込み、削除、修正、入れ替え ・テーマの切り替え「ダーク・ライトモード」",
   webLink: "https://todo-app-ycamera.vercel.app/",
   githubLink: "https://github.com/Ycamera/Todo",
 };
