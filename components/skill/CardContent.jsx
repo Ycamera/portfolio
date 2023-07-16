@@ -98,6 +98,7 @@ const CardContent = memo(({ info, resetCardIndex, moveToOtherPage, hidePageNav }
                       >
                         <Image
                           // pointerEvents="none"
+                          alt={info.title}
                           src={img.src}
                           w={{ base: "100%", md: "min(100%,32rem)" }}
                           h="min(100%,24rem)"
