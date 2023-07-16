@@ -1,3 +1,5 @@
+//eslint-disable react/display-name
+
 import "../styles/globals.css";
 import Nav from "/components/Nav";
 import { ChakraProvider } from "@chakra-ui/react";
