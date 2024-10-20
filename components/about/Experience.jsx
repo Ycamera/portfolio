@@ -16,7 +16,7 @@ export const WorkExperience = () => {
       <VerticalTextComponent text="LANDSCAPING COMPANY">
         <TextContainer
           title="造園土木業"
-          subtitle={["2013 - 2014", "2015 - 2017", "2022.10月 ~ 現在"]}
+          subtitle={["2013 - 2014", "2015 - 2017", "2022.10月 - 2023.8月"]}
           text="現場作業員として日本庭園の管理、植物の植栽・剪定作業に従事。炎天下の業務という過酷な環境下で、精神・肉体的な忍耐力を養う。"
           textAlign="right"
           mt="0"
@@ -25,8 +25,17 @@ export const WorkExperience = () => {
       <VerticalTextComponent text="WELFARE SERVICES" flexDirection="row-reverse" style={{ mt: "10rem" }}>
         <TextContainer
           title="障害福祉サービス"
-          subtitle="2023.6月 ~ 現在"
+          subtitle="2023.6月 ~ 2023.8月"
           text="就労移行支援事業の生活支援員として障がいを抱えた人の支援に従事。福祉サービス提供時間外では、サーバーの管理、ウェブサイトの修正・更新業務に携わる。"
+          mt="0"
+        />
+      </VerticalTextComponent>
+      <VerticalTextComponent text="Information and Communication Technology" style={{ mt: "10rem" }}>
+        <TextContainer
+          title="情報通信業"
+          subtitle={["2023.9月 ~ 現在"]}
+          text="ITエンジニアとしてシステム開発に従事。主要言語はC#、Java。要件定義から設計〜実装工程に携わる。"
+          textAlign="right"
           mt="0"
         />
       </VerticalTextComponent>
