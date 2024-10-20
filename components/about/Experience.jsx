@@ -33,8 +33,8 @@ export const WorkExperience = () => {
       <VerticalTextComponent text="Information and Communication Technology" style={{ mt: "10rem" }}>
         <TextContainer
           title="情報通信業"
-          subtitle={["2023.9月 ~ 現在"]}
-          text="ITエンジニアとしてシステム開発に従事。主要言語はC#、Java。要件定義から設計〜実装工程に携わる。"
+          subtitle={["2023.9月 ~ 現在", "主要言語:C# Java", "DB:PostgreSQL", ""]}
+          text="ITエンジニアとしてシステム開発に従事。要件定義から設計〜実装工程に携わる。"
           textAlign="right"
           mt="0"
         />
